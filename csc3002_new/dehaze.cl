@@ -1,15 +1,12 @@
 __kernel void get_dark_channel(const int startThreadNum,
-                               __global const float *r, __global const float *g,
-                               __global const float *b, const int x_height,
+                               __global const int16 *r, __global const int16 *g,
+                               __global const int16 *b, const int x_height,
                                const int x_width, int wnd,
-                               __global float *darkChannel ) {
-                              //  __local float *local_min) {
+                               __global int16 *darkChannel ) {
   const int idx = get_global_id(0) + startThreadNum;
   int i = idx / x_width;
   int j = idx % x_width;
   int off = idx;
-
-  // printf("Work-item %d, r: %f, g: %f, b: %f\n", idx, r[off], g[off], b[off]);
 
   wnd = min(wnd, min(x_height, x_width));
 
@@ -18,31 +15,17 @@ __kernel void get_dark_channel(const int startThreadNum,
   int cmin = max(j - wnd / 2, 0);
   int cmax = min(j + wnd / 2, x_width - 1);
 
-  float minValue = 99999.0f;
+  int16 minValue = 32767;
 
   for (int y = cmin; y <= cmax; y++) {
     for (int x = rmin; x <= rmax; x++) {
       int off_tmp = y * x_width + x;
-      minValue = fmin(minValue, fmin(fmin(r[off_tmp], g[off_tmp]), b[off_tmp]));
+      minValue = min(minValue, min(min(r[off_tmp], g[off_tmp]), b[off_tmp]));
     }
   }
 
-  // local_min[get_local_id(0)] = minValue;
-
-  // barrier(CLK_LOCAL_MEM_FENCE);
-
-  // for (int stride = get_local_size(0) / 2; stride > 0; stride /= 2) {
-  //   if (get_local_id(0) < stride) {
-  //     local_min[get_local_id(0)] =
-  //         fmin(local_min[get_local_id(0)], local_min[get_local_id(0) + stride]);
-  //   }
-  //   barrier(CLK_LOCAL_MEM_FENCE);
-  // }
-
   if (get_local_id(0) == 0) {
     darkChannel[get_group_id(0)] = minValue;
-
-    // printf("Work-item %d, darkChannel: %f\n", idx, darkChannel[off]);
   }
 }
 

@@ -2,81 +2,39 @@
 
 using namespace cv;
 
-std::tuple<std::vector<float>, int, int, int> read_image(const std::string &filename)
-{
-	int width, height, channels;
-	unsigned char *data = stbi_load(filename.c_str(), &width, &height, &channels, 0);
-
-	if (!data)
-	{
-		std::cerr << "Failed to load image: " << filename << std::endl;
-		return std::make_tuple(std::vector<float>{}, 0, 0, 0); // Return empty data on failure
-	}
-
-	std::vector<float> image(width * height * channels);
-
-	// Normalize the pixel values to the range [0, 1] for OpenCL processing
-	for (int i = 0; i < width * height * channels; ++i)
-	{
-		image[i] = static_cast<float>(data[i]) / 255.0f; // Scale pixel values to [0, 1]
-	}
-
-	stbi_image_free(data);
-	return std::make_tuple(image, width, height, channels);
-}
-
-void write_image(const std::string &filename, const std::vector<float> &image, int width, int height, int channels)
-{
-	std::vector<unsigned char> pngData(image.size() * sizeof(float));
-	for (size_t i = 0; i < image.size(); ++i)
-	{
-		float pixelValue = image[i];
-		pngData[i] = static_cast<unsigned char>(pixelValue * 255); // Scale the pixel value
-	}
-
-	int success = stbi_write_png(filename.c_str(), width, height, channels, pngData.data(), width * channels);
-	if (!success)
-	{
-		std::cerr << "Failed to write image: " << filename << std::endl;
-	}
-}
-
 int main()
 {
-	// auto [image, width, height, channels] = read_image("../forest.jpg");
-	Mat image = imread("C:/Users/jpeop/csc3002/forest.jpg", 0);
-	int width = image.size().width;
-	int height = image.size().height;
-	int channels = image.channels();
+	Mat image = imread("C:/Users/jpeop/csc3002_new/forest.jpg", 0);
+int width = image.size().width;
+int height = image.size().height;
+int channels = image.channels();
 
-	cv::Mat floatImage;
-    image.convertTo(floatImage, CV_32F);
+cv::Mat int16Image;
+image.convertTo(int16Image, CV_16S); // Convert the image to int16
 
-	float* img = (float*)malloc(sizeof(float) * width * height * channels);
-	if (img == NULL) {
-		printf("Memory allocation for img failed\n");
-		return 1;
-	}
+int16_t* img = (int16_t*)malloc(sizeof(int16_t) * width * height * channels);
+if (img == NULL) {
+    printf("Memory allocation for img failed\n");
+    return 1;
+}
 
-	memcpy(img, floatImage.data, sizeof(float) * width * height * channels);
+memcpy(img, int16Image.data, sizeof(int16_t) * width * height * channels);
 
-	float* img_out = (float*)malloc(sizeof(float) * width * height * channels);
-	if (img_out == NULL) {
-		printf("Memory allocation for img_out failed\n");
-		free(img); 
-		return 1;
-	}
+int16_t* img_out = (int16_t*)malloc(sizeof(int16_t) * width * height * channels);
+if (img_out == NULL) {
+    printf("Memory allocation for img_out failed\n");
+    free(img); 
+    return 1;
+}
 
-	float atmosphere[3];
-	for (int i = 0; i < 10; ++i)
-	{ // Print the first 10 pixels
-		std::cout << "Pixel " << i << ": ";
-		for (int c = 0; c < channels; ++c)
-		{
-			std::cout << img[i * channels + c] << " ";
-		}
-		std::cout << "\n";
-	}
+int16_t atmosphere[3];
+for (int i = 0; i < 10; ++i) { // Print the first 10 pixels
+    std::cout << "Pixel " << i << ": ";
+    for (int c = 0; c < channels; ++c) {
+        std::cout << img[i * channels + c] << " ";
+    }
+    std::cout << "\n";
+}
 
 	std::cout << "Image read successfully. Width: " << width << ", Height: " << height << ", Channels: " << channels << std::endl;
 
@@ -112,9 +70,9 @@ int main()
 		std::cout << "Max Work Group Size: " << maxWorkGroupSize << std::endl;
 
 		// Split image into RGB channels
-		std::vector<float> r(width * height);
-		std::vector<float> g(width * height);
-		std::vector<float> b(width * height);
+		std::vector<int16_t> r(width * height);
+		std::vector<int16_t> g(width * height);
+		std::vector<int16_t> b(width * height);
 		for (int i = 0; i < height; ++i)
 		{ for (int j = 0; j < width; j++) {
 			r[i] = img[(i * width + j) * channels];
@@ -123,13 +81,13 @@ int main()
 		} }
 
 		// Create buffers for RGB channels
-		cl::Buffer rBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(float) * r.size(), r.data());
-		cl::Buffer gBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(float) * g.size(), g.data());
-		cl::Buffer bBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(float) * b.size(), b.data());
+		cl::Buffer rBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(int16_t) * r.size(), r.data());
+		cl::Buffer gBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(int16_t) * g.size(), g.data());
+		cl::Buffer bBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(int16_t) * b.size(), b.data());
 
-		cl::Buffer imageBuffer(context, CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, sizeof(float) * width * height * channels, img);
+		cl::Buffer imageBuffer(context, CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, sizeof(int16_t) * width * height * channels, img);
 		std::cout << "Created image buffer" << std::endl;
-		cl::Buffer darkChannelBuffer(context, CL_MEM_READ_WRITE, sizeof(float) * width * height * channels);
+		cl::Buffer darkChannelBuffer(context, CL_MEM_READ_WRITE, sizeof(int16_t) * width * height * channels);
 		std::cout << "Created dark channel buffer" << std::endl;
 		cl::Buffer atmosphereBuffer(context, CL_MEM_READ_WRITE, sizeof(float) * 3);
 		std::cout << "Created atmosphere buffer" << std::endl;
@@ -159,7 +117,7 @@ int main()
 		// cl::Kernel get_transmission_estimate(program, "get_transmission_estimate");
 		// cl::Kernel get_radiance(program, "get_radiance");
 
-		queue.enqueueWriteBuffer(imageBuffer, CL_TRUE, 0, sizeof(float) * width * height * channels, img);
+		queue.enqueueWriteBuffer(imageBuffer, CL_TRUE, 0, sizeof(int16_t) * width * height * channels, img);
 		std::cout << "Wrote to image buffer" << std::endl;
 
 		err = get_dark_channel.setArg(0, 0);
@@ -242,16 +200,6 @@ int main()
 		{
 			std::cout << "Arguement 7 successful" << std::endl;
 		}
-		// err = get_dark_channel.setArg(8, cl::Local(localWorkSize * sizeof(float)));
-		// if (err != CL_SUCCESS)
-		// {
-		// 	std::cerr << "Error setting kernel argument 8: " << err << std::endl;
-		// 	return 1;
-		// }
-		// else
-		// {
-		// 	std::cout << "Arguement 8 successful" << std::endl;
-		// }
 
 		cl_int ret2 = queue.enqueueNDRangeKernel(get_dark_channel, cl::NullRange, cl::NDRange(globalWorkSize), cl::NullRange);
 		if (ret2 != CL_SUCCESS)
@@ -433,8 +381,8 @@ int main()
 	// 	queue.finish();
 		
 		// std::vector<float> result(width * height * channels);
-		std::vector<float> result(width * height);
-		err = queue.enqueueReadBuffer(darkChannelBuffer, CL_TRUE, 0, sizeof(float) * result.size(), result.data());
+		std::vector<int16_t> result(width * height);
+		err = queue.enqueueReadBuffer(darkChannelBuffer, CL_TRUE, 0, sizeof(int16_t) * result.size(), result.data());
 		if (err != CL_SUCCESS)
 		{
 			std::cerr << "Error reading Radiance buffer: " << err << std::endl;
@@ -451,7 +399,7 @@ int main()
 
 		std::cout << "About to write image..." << std::endl;
 		// write_image("result.png", result, width, height, channels);
-		Mat  imgcv_out(height, width, CV_32FC1, img);
+		Mat  imgcv_out(height, width, CV_16SC1, img);
 		imwrite("result.png", imgcv_out);
 		std::cout << "Image written successfully..." << std::endl;
 	}

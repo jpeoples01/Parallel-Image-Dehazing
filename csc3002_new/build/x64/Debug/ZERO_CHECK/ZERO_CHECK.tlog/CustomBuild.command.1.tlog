@@ -1,6 +1,6 @@
-^C:\USERS\JPEOP\CSC3002\BUILD\CMAKEFILES\D11BE0BC60BC95A4A31304C7A27B4F0B\GENERATE.STAMP.RULE
+^C:\USERS\JPEOP\CSC3002_NEW\BUILD\CMAKEFILES\26BDBE4FFA368D16A4925B2562BB8F75\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jpeop/csc3002 -BC:/Users/jpeop/csc3002/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/jpeop/csc3002/build/OpenCL_Dehaze.sln
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jpeop/csc3002_new -BC:/Users/jpeop/csc3002_new/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/jpeop/csc3002_new/build/OpenCL_Dehaze.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
