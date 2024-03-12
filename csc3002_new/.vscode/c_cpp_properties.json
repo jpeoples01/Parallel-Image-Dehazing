@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "Win64",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/intel/",
+                "C:/Users/jpeop/OpenCL-CLHPP/include",
+                "C:/Users/jpeop/openCL-Headers",
+                "C:/Users/jpeop/OpenCL-SDK/include",
+                "C:/Users/jpeop/OpenCL-SDK/install/bin",
+                "C:/Users/jpeop/Downloads/opencv/build/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "compilerPath": "cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64"
+        }
+    ],
+    "version": 4
+}

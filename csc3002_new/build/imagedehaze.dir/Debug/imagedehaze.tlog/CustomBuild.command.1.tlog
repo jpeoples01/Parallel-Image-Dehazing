@@ -1,0 +1,10 @@
+^C:\USERS\JPEOP\CSC3002\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jpeop/csc3002 -BC:/Users/jpeop/csc3002/build --check-stamp-file C:/Users/jpeop/csc3002/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
