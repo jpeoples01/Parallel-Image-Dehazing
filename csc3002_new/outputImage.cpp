@@ -464,8 +464,8 @@ int main()
 				  << std::endl;
 	}
 	auto stop = std::chrono::high_resolution_clock::now();
-	auto duration = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
-    std::cout << "Time taken by function: " << duration.count() << " seconds" << std::endl;
+	auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+    std::cout << "Time taken by function: " << duration.count() << " milliseconds" << std::endl;
 
 	std::cout << "Press ENTER to exit...";
 	std::cin.get();

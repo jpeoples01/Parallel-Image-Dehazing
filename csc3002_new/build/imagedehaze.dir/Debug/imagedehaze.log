@@ -1,5 +1,7 @@
-﻿  outputImage.cpp
+﻿  Building Custom Rule C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/CMakeLists.txt
+  outputImage.cpp
   opencl.hpp: __CL_ENABLE_EXCEPTIONS is deprecated. Define CL_HPP_ENABLE_EXCEPTIONS instead
   opencl.hpp: CL_HPP_TARGET_OPENCL_VERSION is not defined. It will default to 300 (OpenCL 3.0)
 C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\outputImage.cpp(71,8): warning C4101: 'atmosphere': unreferenced local variable
+  LINK : C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\build\Debug\imagedehaze.exe not found or not built by the last incremental link; performing full link
   imagedehaze.vcxproj -> C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\build\Debug\imagedehaze.exe
