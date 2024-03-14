@@ -4,13 +4,14 @@ using namespace cv;
 
 int main()
 {
-	Mat image = imread("C:/Users/jpeop/csc3002_new/forest.jpg", 0);
+auto start = std::chrono::high_resolution_clock::now();
+Mat image = imread("C:/Users/jpeop/csc3002_new/forest.jpg", 0);
 int width = image.size().width;
 int height = image.size().height;
 int channels = image.channels();
 
 cv::Mat int16Image;
-image.convertTo(int16Image, CV_16S); // Convert the image to int16
+image.convertTo(int16Image, CV_16S); 
 
 int16_t* img = (int16_t*)malloc(sizeof(int16_t) * width * height * channels);
 if (img == NULL) {
@@ -28,7 +29,7 @@ if (img_out == NULL) {
 }
 
 int16_t atmosphere[3];
-for (int i = 0; i < 10; ++i) { // Print the first 10 pixels
+for (int i = 0; i < 10; ++i) { 
     std::cout << "Pixel " << i << ": ";
     for (int c = 0; c < channels; ++c) {
         std::cout << img[i * channels + c] << " ";
@@ -36,14 +37,10 @@ for (int i = 0; i < 10; ++i) { // Print the first 10 pixels
     std::cout << "\n";
 }
 
-	std::cout << "Image read successfully. Width: " << width << ", Height: " << height << ", Channels: " << channels << std::endl;
-
-	// size_t localWorkSize = 1024;
 	size_t globalWorkSize = (width * height);
 
 	try
 	{
-		std::cout << "Initializing OpenCL..." << std::endl;
 		cl::Platform platform;
 		cl::Device device;
 		cl::Context context;
@@ -63,11 +60,9 @@ for (int i = 0; i < 10; ++i) { // Print the first 10 pixels
 		// cl::Context context(CL_DEVICE_TYPE_GPU);
 		// cl::CommandQueue queue(context);
 		// cl::Device device = context.getInfo<CL_CONTEXT_DEVICES>().front();
-		std::cout << "Done initializing OpenCL." << std::endl;
 
 		size_t maxWorkGroupSize;
 		clGetDeviceInfo(device(), CL_DEVICE_MAX_WORK_GROUP_SIZE, sizeof(size_t), &maxWorkGroupSize, NULL);
-		std::cout << "Max Work Group Size: " << maxWorkGroupSize << std::endl;
 
 		// Split image into RGB channels
 		std::vector<int16_t> r(width * height);
@@ -86,23 +81,15 @@ for (int i = 0; i < 10; ++i) { // Print the first 10 pixels
 		cl::Buffer bBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(int16_t) * b.size(), b.data());
 
 		cl::Buffer imageBuffer(context, CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, sizeof(int16_t) * width * height * channels, img);
-		std::cout << "Created image buffer" << std::endl;
 		cl::Buffer darkChannelBuffer(context, CL_MEM_READ_WRITE, sizeof(int16_t) * width * height * channels);
-		std::cout << "Created dark channel buffer" << std::endl;
 		cl::Buffer atmosphereBuffer(context, CL_MEM_READ_WRITE, sizeof(float) * 3);
-		std::cout << "Created atmosphere buffer" << std::endl;
 		cl::Buffer transEstBuffer(context, CL_MEM_READ_WRITE, sizeof(float) * width * height * channels);
-		std::cout << "Created transmission buffer" << std::endl;
 		cl::Buffer radianceBuffer(context, CL_MEM_READ_WRITE, sizeof(float) * width * height * channels);
-		std::cout << "Created radiance buffer" << std::endl;
 
 		// Create and build programs
-		std::cout << "Creating and building programs..." << std::endl;
 		cl::Program::Sources sources;
 
 		// Load the OpenCL source code
-		cl_int err;
-
 		std::ifstream file("../dehaze.cl");
 		std::string source(std::istreambuf_iterator<char>(file), (std::istreambuf_iterator<char>()));
 		sources.push_back({source.c_str(), source.length() + 1});
@@ -118,109 +105,18 @@ for (int i = 0; i < 10; ++i) { // Print the first 10 pixels
 		// cl::Kernel get_radiance(program, "get_radiance");
 
 		queue.enqueueWriteBuffer(imageBuffer, CL_TRUE, 0, sizeof(int16_t) * width * height * channels, img);
-		std::cout << "Wrote to image buffer" << std::endl;
 
-		err = get_dark_channel.setArg(0, 0);
-		if (err != CL_SUCCESS)
-		{
-			std::cerr << "Error setting kernel argument 0: " << err << std::endl;
-			return 1;
-		}
-		else
-		{
-			std::cout << "Arguement 0 successful" << std::endl;
-		}
-		err = get_dark_channel.setArg(1, rBuffer);
-		if (err != CL_SUCCESS)
-		{
-			std::cerr << "Error setting kernel argument 1: " << err << std::endl;
-			return 1;
-		}
-		else
-		{
-			std::cout << "Arguement 1 successful" << std::endl;
-		}
-		err = get_dark_channel.setArg(2, gBuffer);
-		if (err != CL_SUCCESS)
-		{
-			std::cerr << "Error setting kernel argument 2: " << err << std::endl;
-			return 1;
-		}
-		else
-		{
-			std::cout << "Arguement 2 successful" << std::endl;
-		}
-		err = get_dark_channel.setArg(3, bBuffer);
-		if (err != CL_SUCCESS)
-		{
-			std::cerr << "Error setting kernel argument 3: " << err << std::endl;
-			return 1;
-		}
-		else
-		{
-			std::cout << "Arguement 3 successful" << std::endl;
-		}
-		err = get_dark_channel.setArg(4, height);
-		if (err != CL_SUCCESS)
-		{
-			std::cerr << "Error setting kernel argument 4: " << err << std::endl;
-			return 1;
-		}
-		else
-		{
-			std::cout << "Arguement 4 successful" << std::endl;
-		}
-		err = get_dark_channel.setArg(5, width);
-		if (err != CL_SUCCESS)
-		{
-			std::cerr << "Error setting kernel argument 5: " << err << std::endl;
-			return 1;
-		}
-		else
-		{
-			std::cout << "Arguement 5 successful" << std::endl;
-		}
-		err = get_dark_channel.setArg(6, 15);
-		if (err != CL_SUCCESS)
-		{
-			std::cerr << "Error setting kernel argument 6: " << err << std::endl;
-			return 1;
-		}
-		else
-		{
-			std::cout << "Arguement 6 successful" << std::endl;
-		}
-		err = get_dark_channel.setArg(7, darkChannelBuffer);
-		if (err != CL_SUCCESS)
-		{
-			std::cerr << "Error setting kernel argument 7: " << err << std::endl;
-			return 1;
-		}
-		else
-		{
-			std::cout << "Arguement 7 successful" << std::endl;
-		}
+		get_dark_channel.setArg(0, 0);
+		get_dark_channel.setArg(1, rBuffer);
+		get_dark_channel.setArg(2, gBuffer);
+		get_dark_channel.setArg(3, bBuffer);
+		get_dark_channel.setArg(4, height);
+		get_dark_channel.setArg(5, width);
+		get_dark_channel.setArg(6, 8);
+		get_dark_channel.setArg(7, darkChannelBuffer);
 
-		cl_int ret2 = queue.enqueueNDRangeKernel(get_dark_channel, cl::NullRange, cl::NDRange(globalWorkSize), cl::NullRange);
-		if (ret2 != CL_SUCCESS)
-		{
-			std::cerr << "Failed to execute Dark Channel kernel: " << ret2 << std::endl;
-			return 1;
-		}
-		else
-		{
-			std::cout << "Kernel executed successfully" << std::endl;
-		}
-		ret2 = queue.finish();
-		if (ret2 != CL_SUCCESS)
-		{
-			std::cerr << "Failed to finish command queue: " << ret2 << std::endl;
-			return 1;
-		}
-		else
-		{
-			std::cout << "Command queue finished" << std::endl;
-		}
+		queue.enqueueNDRangeKernel(get_dark_channel, cl::NullRange, cl::NDRange(globalWorkSize), cl::NullRange);
+		queue.finish();
 
 	// 	queue.enqueueReadBuffer(darkChannelBuffer, CL_TRUE, 0, sizeof(float) * width * height * channels, img_out);
 
@@ -382,26 +278,17 @@ for (int i = 0; i < 10; ++i) { // Print the first 10 pixels
 		
 		// std::vector<float> result(width * height * channels);
 		std::vector<int16_t> result(width * height);
-		err = queue.enqueueReadBuffer(darkChannelBuffer, CL_TRUE, 0, sizeof(int16_t) * result.size(), result.data());
-		if (err != CL_SUCCESS)
-		{
-			std::cerr << "Error reading Radiance buffer: " << err << std::endl;
-		}
+		queue.enqueueReadBuffer(darkChannelBuffer, CL_TRUE, 0, sizeof(int16_t) * result.size(), result.data());
 
-		for (int i = 0; i < 100; ++i)
+		for (int i = 0; i < 10; ++i)
 		{
 			std::cout << "Element " << i << ": " << result[i] << "\n";
 		}
 
 		queue.finish();
-
-		std::cout << "Done executing kernels." << std::endl;
-
-		std::cout << "About to write image..." << std::endl;
-		// write_image("result.png", result, width, height, channels);
+		
 		Mat  imgcv_out(height, width, CV_16SC1, img);
 		imwrite("result.png", imgcv_out);
-		std::cout << "Image written successfully..." << std::endl;
 	}
 	catch (cl::Error err)
 	{
@@ -410,6 +297,10 @@ for (int i = 0; i < 10; ++i) { // Print the first 10 pixels
 				  << err.err()
 				  << std::endl;
 	}
+	
+	auto stop = std::chrono::high_resolution_clock::now();
+	auto duration = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
+	std::cout << "Time taken by function: " << duration.count() << " seconds" << std::endl;
 
 	std::cout << "Press ENTER to exit...";
 	std::cin.get();
