@@ -5,7 +5,17 @@
       "ProjectGuid": "38d7fd20-477f-35af-93aa-5adbe732a294",
       "DisplayName": "imagedehaze",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "d2812cc3-816c-32d5-8ce6-223be5afe1f3": {
+      "ProjectGuid": "d2812cc3-816c-32d5-8ce6-223be5afe1f3",
+      "DisplayName": "imagedehaze",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

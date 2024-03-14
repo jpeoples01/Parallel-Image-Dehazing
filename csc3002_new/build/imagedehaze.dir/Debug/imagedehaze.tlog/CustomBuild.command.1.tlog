@@ -1,6 +1,6 @@
-^C:\USERS\JPEOP\CSC3002_NEW\CMAKELISTS.TXT
+^C:\USERS\JPEOP\DISSERTATION\CSC3002_IMAGE_DEHAZING\CSC3002_NEW\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jpeop/csc3002_new -BC:/Users/jpeop/csc3002_new/build --check-stamp-file C:/Users/jpeop/csc3002_new/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new -BC:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build --check-stamp-file C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
