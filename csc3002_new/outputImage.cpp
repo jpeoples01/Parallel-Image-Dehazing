@@ -45,7 +45,7 @@ int main()
 {
 	// auto [image, width, height, channels] = read_image("../forest.jpg");
 	auto start = std::chrono::high_resolution_clock::now();
-	Mat image = imread("C:/Users/jpeop/csc3002/forest.jpg", 0);
+	Mat image = imread("C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/forest.jpg", 0);
 	int width = image.size().width;
 	int height = image.size().height;
 	int channels = image.channels();
@@ -156,7 +156,7 @@ int main()
 
         // cl::Kernel dehaze(program, "dehaze");
 		cl::Kernel get_dark_channel(program, "get_dark_channel");
-		cl::Kernel get_atmosphere(program, "get_atmosphere");
+		// cl::Kernel get_atmosphere(program, "get_atmosphere");
 		// cl::Kernel get_transmission_estimate(program, "get_transmission_estimate");
 		// cl::Kernel get_radiance(program, "get_radiance");
 
@@ -275,102 +275,102 @@ int main()
 			std::cout << "Command queue finished" << std::endl;
 		}
 
-		queue.enqueueReadBuffer(darkChannelBuffer, CL_TRUE, 0, sizeof(float) * width * height * channels, img_out);
+		// queue.enqueueReadBuffer(darkChannelBuffer, CL_TRUE, 0, sizeof(float) * width * height * channels, img_out);
 
-		err = get_atmosphere.setArg(0, imageBuffer);
-		if (err != CL_SUCCESS)
-		{
-			std::cerr << "Error setting kernel argument 0: " << err << std::endl;
-			return 1;
-		}
-		else
-		{
-			std::cout << "Arguement 0 successful" << std::endl;
-		}
-		err = get_atmosphere.setArg(1, atmosphereBuffer);
-		if (err != CL_SUCCESS)
-		{
-			std::cerr << "Error setting kernel argument 1: " << err << std::endl;
-			return 1;
-		}
-		else
-		{
-			std::cout << "Arguement 1 successful" << std::endl;
-		}
-		get_atmosphere.setArg(2, cl::Local(1024 * sizeof(float)));
-		if (err != CL_SUCCESS)
-		{
-			std::cerr << "Error setting kernel argument 2: " << err << std::endl;
-			return 1;
-		}
-		else
-		{
-			std::cout << "Arguement 2 successful" << std::endl;
-		}
-		get_atmosphere.setArg(3, width * height);
-		if (err != CL_SUCCESS)
-		{
-			std::cerr << "Error setting kernel argument 3: " << err << std::endl;
-			return 1;
-		}
-		else
-		{
-			std::cout << "Arguement 3 successful" << std::endl;
-		}
+		// err = get_atmosphere.setArg(0, imageBuffer);
+		// if (err != CL_SUCCESS)
+		// {
+		// 	std::cerr << "Error setting kernel argument 0: " << err << std::endl;
+		// 	return 1;
+		// }
+		// else
+		// {
+		// 	std::cout << "Arguement 0 successful" << std::endl;
+		// }
+		// err = get_atmosphere.setArg(1, atmosphereBuffer);
+		// if (err != CL_SUCCESS)
+		// {
+		// 	std::cerr << "Error setting kernel argument 1: " << err << std::endl;
+		// 	return 1;
+		// }
+		// else
+		// {
+		// 	std::cout << "Arguement 1 successful" << std::endl;
+		// }
+		// get_atmosphere.setArg(2, cl::Local(1024 * sizeof(float)));
+		// if (err != CL_SUCCESS)
+		// {
+		// 	std::cerr << "Error setting kernel argument 2: " << err << std::endl;
+		// 	return 1;
+		// }
+		// else
+		// {
+		// 	std::cout << "Arguement 2 successful" << std::endl;
+		// }
+		// get_atmosphere.setArg(3, width * height);
+		// if (err != CL_SUCCESS)
+		// {
+		// 	std::cerr << "Error setting kernel argument 3: " << err << std::endl;
+		// 	return 1;
+		// }
+		// else
+		// {
+		// 	std::cout << "Arguement 3 successful" << std::endl;
+		// }
 
-		cl_int ret3 = queue.enqueueNDRangeKernel(get_atmosphere, cl::NullRange, cl::NDRange(width * height), cl::NullRange);
-		if (ret3 != CL_SUCCESS)
-		{
-			std::cerr << "Failed to execute Atmosphere kernel: " << ret3 << std::endl;
-			return 1;
-		}
-		else
-		{
-			std::cout << "Kernel execution successful" << std::endl;
-		}
-		ret3 = queue.finish();
-		if (ret3 != CL_SUCCESS)
-		{
-			std::cerr << "Failed to finish command queue: " << ret3 << std::endl;
-			return 1;
-		}
-		else
-		{
-			std::cout << "Command queue finished" << std::endl;
-		}
+		// cl_int ret3 = queue.enqueueNDRangeKernel(get_atmosphere, cl::NullRange, cl::NDRange(width * height), cl::NullRange);
+		// if (ret3 != CL_SUCCESS)
+		// {
+		// 	std::cerr << "Failed to execute Atmosphere kernel: " << ret3 << std::endl;
+		// 	return 1;
+		// }
+		// else
+		// {
+		// 	std::cout << "Kernel execution successful" << std::endl;
+		// }
+		// ret3 = queue.finish();
+		// if (ret3 != CL_SUCCESS)
+		// {
+		// 	std::cerr << "Failed to finish command queue: " << ret3 << std::endl;
+		// 	return 1;
+		// }
+		// else
+		// {
+		// 	std::cout << "Command queue finished" << std::endl;
+		// }
 
-		queue.enqueueReadBuffer(atmosphereBuffer, CL_TRUE, 0, sizeof(float) * 3, atmosphere);
+		// queue.enqueueReadBuffer(atmosphereBuffer, CL_TRUE, 0, sizeof(float) * 3, atmosphere);
 
-	// 	get_transmission_estimate.setArg(0, imageBuffer);
-	// 	get_transmission_estimate.setArg(1, atmosphereBuffer);
-	// 	get_transmission_estimate.setArg(2, 0.80f);
-	// 	get_transmission_estimate.setArg(3, 15);
-	// 	get_transmission_estimate.setArg(4, darkChannelBuffer);
-	// 	get_transmission_estimate.setArg(5, transEstBuffer);
-	// 	get_transmission_estimate.setArg(6, height);
-	// 	get_transmission_estimate.setArg(7, width);
-	// 	cl_int ret4 = queue.enqueueNDRangeKernel(get_transmission_estimate, cl::NullRange, cl::NDRange(width, height), cl::NullRange);
-	// 	if (ret4 != CL_SUCCESS)
-	// 	{
-	// 		std::cerr << "Failed to execute Transmission kernel: " << ret4 << std::endl;
-	// 		return 1;
-	// 	}
-	// 	else
-	// 	{
-	// 		std::cout << "Kernel execution successful" << std::endl;
-	// 	}
-	// 	ret4 = queue.finish();
-	// 	if (ret4 != CL_SUCCESS)
-	// 	{
-	// 		std::cerr << "Failed in command queue: " << ret4 << std::endl;
-	// 		return 1;
-	// 	}
-	// 	else
-	// 	{
-	// 		std::cout << "Command queue finished" << std::endl;
-	// 	}
+		// get_transmission_estimate.setArg(0, imageBuffer);
+		// get_transmission_estimate.setArg(1, atmosphereBuffer);
+		// get_transmission_estimate.setArg(2, 0.80f);
+		// get_transmission_estimate.setArg(3, 15);
+		// get_transmission_estimate.setArg(4, darkChannelBuffer);
+		// get_transmission_estimate.setArg(5, transEstBuffer);
+		// get_transmission_estimate.setArg(6, height);
+		// get_transmission_estimate.setArg(7, width);
+		// cl_int ret4 = queue.enqueueNDRangeKernel(get_transmission_estimate, cl::NullRange, cl::NDRange(width, height), cl::NullRange);
+		// if (ret4 != CL_SUCCESS)
+		// {
+		// 	std::cerr << "Failed to execute Transmission kernel: " << ret4 << std::endl;
+		// 	return 1;
+		// }
+		// else
+		// {
+		// 	std::cout << "Kernel execution successful" << std::endl;
+		// }
+		// ret4 = queue.finish();
+		// if (ret4 != CL_SUCCESS)
+		// {
+		// 	std::cerr << "Failed in command queue: " << ret4 << std::endl;
+		// 	return 1;
+		// }
+		// else
+		// {
+		// 	std::cout << "Command queue finished" << std::endl;
+		// }
 
-	// 	queue.enqueueReadBuffer(transEstBuffer, CL_TRUE, 0, sizeof(float) * height * width, img);
+		// queue.enqueueReadBuffer(transEstBuffer, CL_TRUE, 0, sizeof(float) * height * width, img_out);
 
 	// 	get_radiance.setArg(0, imageBuffer);
 	// 	get_radiance.setArg(1, transEstBuffer);
@@ -428,20 +428,20 @@ int main()
     //   if (err != CL_SUCCESS) {
     //   std::cerr << "Error setting kernel argument 8: " << err << std::endl;}
 
-	// 	// Enqueue the kernel for execution
-	// 	queue.enqueueNDRangeKernel(dehaze, cl::NullRange, cl::NDRange(width, height), cl::NullRange);
+		// Enqueue the kernel for execution
+		// queue.enqueueNDRangeKernel(dehaze, cl::NullRange, cl::NDRange(width, height), cl::NullRange);
 
-	// 	queue.finish();
+		// queue.finish();
 		
 		// std::vector<float> result(width * height * channels);
-		std::vector<float> result(3);
-		err = queue.enqueueReadBuffer(atmosphereBuffer, CL_TRUE, 0, sizeof(float) * result.size(), result.data());
+		std::vector<float> result(width * height);
+		err = queue.enqueueReadBuffer(darkChannelBuffer, CL_TRUE, 0, sizeof(float) * result.size(), result.data());
 		if (err != CL_SUCCESS)
 		{
 			std::cerr << "Error reading Radiance buffer: " << err << std::endl;
 		}
 
-		for (int i = 0; i < 3; ++i)
+		for (int i = 0; i < 10; ++i)
 		{
 			std::cout << "Element " << i << ": " << result[i] << "\n";
 		}
@@ -453,7 +453,7 @@ int main()
 		std::cout << "About to write image..." << std::endl;
 		// write_image("result.png", result, width, height, channels);
 		Mat  imgcv_out(height, width, CV_32FC1, img);
-		imwrite("result.png", imgcv_out);
+		imwrite("C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/result.png", imgcv_out);
 		std::cout << "Image written successfully..." << std::endl;
 	}
 	catch (cl::Error err)

@@ -46,21 +46,21 @@ __kernel void get_dark_channel(const int startThreadNum,
   }
 }
 
-__kernel void get_atmosphere(__global float *input, __global float *output,
-                             __local float *local_sums, int n) {
-  int global_id = get_global_id(0);
-  int local_id = get_local_id(0);
-  int local_size = get_local_size(0);
+// __kernel void get_atmosphere(__global float *input, __global float *output,
+//                              __local float *local_sums, int n) {
+//   int global_id = get_global_id(0);
+//   int local_id = get_local_id(0);
+//   int local_size = get_local_size(0);
 
-  if (global_id < n) {
-    local_sums[local_id] = input[global_id];
-  } else {
-    local_sums[local_id] = 0;
-  }
-  if (local_id == 0) {
-    output[get_group_id(0)] = local_sums[0];
-  }
-}
+//   if (global_id < n) {
+//     local_sums[local_id] = input[global_id];
+//   } else {
+//     local_sums[local_id] = 0;
+//   }
+//   if (local_id == 0) {
+//     output[get_group_id(0)] = local_sums[0];
+//   }
+// }
 
 // __kernel void get_transmission_estimate(__global float *image,
 //                                         __global float *atmosphere, float omega,
@@ -104,7 +104,7 @@ __kernel void get_atmosphere(__global float *input, __global float *output,
 //     float3 rad = division_result + atm;
 
 //     // Clamp the values of rad between 0 and 1
-//     rad = clamp(rad, 0.0f, 1.0f);
+//     // rad = clamp(rad, 0.0f, 1.0f);
 
 //     // printf("Work-item %d, Division result: (%f, %f, %f), Rad: (%f, %f, %f)\n", idx, division_result.x, division_result.y, division_result.z, rad.x, rad.y, rad.z);
 

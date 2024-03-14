@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\jpeop\csc3002_new\build\CMakeFiles\26bdbe4ffa368d16a4925b2562bb8f75\generate.stamp.rule">
+    <CustomBuild Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\build\CMakeFiles\8811de124224f89c281d631c2bba41b3\generate.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{68E29930-7540-3120-9689-7BF8ED461A52}</UniqueIdentifier>
+      <UniqueIdentifier>{0673015A-1C32-367B-BB93-239714CC5241}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
