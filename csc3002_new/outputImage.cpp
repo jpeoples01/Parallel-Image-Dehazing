@@ -4,7 +4,7 @@ using namespace cv;
 
 int main()
 {
-auto start = std::chrono::high_resolution_clock::now();
+// auto start = std::chrono::high_resolution_clock::now();
 Mat image = imread("C:/Users/jpeop/csc3002_new/forest.jpg", 0);
 int width = image.size().width;
 int height = image.size().height;
@@ -103,6 +103,8 @@ for (int i = 0; i < 10; ++i) {
 		// cl::Kernel get_atmosphere(program, "get_atmosphere");
 		// cl::Kernel get_transmission_estimate(program, "get_transmission_estimate");
 		// cl::Kernel get_radiance(program, "get_radiance");
+
+		auto start = std::chrono::high_resolution_clock::now();
 
 		queue.enqueueWriteBuffer(imageBuffer, CL_TRUE, 0, sizeof(int16_t) * width * height * channels, img);
 
@@ -286,6 +288,10 @@ for (int i = 0; i < 10; ++i) {
 		}
 
 		queue.finish();
+
+		auto stop = std::chrono::high_resolution_clock::now();
+	    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+	    std::cout << "Time taken by function: " << duration.count() << " milliseconds" << std::endl;
 		
 		Mat  imgcv_out(height, width, CV_16SC1, img);
 		imwrite("result.png", imgcv_out);
@@ -298,9 +304,9 @@ for (int i = 0; i < 10; ++i) {
 				  << std::endl;
 	}
 	
-	auto stop = std::chrono::high_resolution_clock::now();
-	auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
-	std::cout << "Time taken by function: " << duration.count() << " milliseconds" << std::endl;
+	// auto stop = std::chrono::high_resolution_clock::now();
+	// auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+	// std::cout << "Time taken by function: " << duration.count() << " milliseconds" << std::endl;
 
 	std::cout << "Press ENTER to exit...";
 	std::cin.get();
