@@ -44,7 +44,6 @@ void write_image(const std::string &filename, const std::vector<float> &image, i
 int main()
 {
 	// auto [image, width, height, channels] = read_image("../forest.jpg");
-	auto start = std::chrono::high_resolution_clock::now();
 	Mat image = imread("C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/forest.jpg", 0);
 	int width = image.size().width;
 	int height = image.size().height;
@@ -159,6 +158,8 @@ int main()
 		// cl::Kernel get_atmosphere(program, "get_atmosphere");
 		// cl::Kernel get_transmission_estimate(program, "get_transmission_estimate");
 		// cl::Kernel get_radiance(program, "get_radiance");
+
+		auto start = std::chrono::high_resolution_clock::now();
 
 		queue.enqueueWriteBuffer(imageBuffer, CL_TRUE, 0, sizeof(float) * width * height * channels, img);
 		std::cout << "Wrote to image buffer" << std::endl;
@@ -448,6 +449,10 @@ int main()
 
 		queue.finish();
 
+		auto stop = std::chrono::high_resolution_clock::now();
+	    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
+        std::cout << "Time taken by function: " << duration.count() << " milliseconds" << std::endl;
+
 		std::cout << "Done executing kernels." << std::endl;
 
 		std::cout << "About to write image..." << std::endl;
@@ -463,9 +468,6 @@ int main()
 				  << err.err()
 				  << std::endl;
 	}
-	auto stop = std::chrono::high_resolution_clock::now();
-	auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
-    std::cout << "Time taken by function: " << duration.count() << " milliseconds" << std::endl;
 
 	std::cout << "Press ENTER to exit...";
 	std::cin.get();
