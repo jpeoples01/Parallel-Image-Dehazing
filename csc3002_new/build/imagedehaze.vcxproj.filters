@@ -4,12 +4,6 @@
     <ClCompile Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\outputImage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\stb_image.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\stb_image_write.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\CMakeLists.txt" />

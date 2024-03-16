@@ -4,7 +4,6 @@ using namespace cv;
 
 int main()
 {
-// auto start = std::chrono::high_resolution_clock::now();
 Mat image = imread("C:/Users/jpeop/csc3002_new/forest.jpg", 0);
 int width = image.size().width;
 int height = image.size().height;
@@ -98,7 +97,6 @@ for (int i = 0; i < 10; ++i) {
 		cl::Program program(context, sources);
 		program.build("-cl-std=CL1.2");
 
-        // cl::Kernel dehaze(program, "dehaze");
 		cl::Kernel get_dark_channel(program, "get_dark_channel");
 		// cl::Kernel get_atmosphere(program, "get_atmosphere");
 		// cl::Kernel get_transmission_estimate(program, "get_transmission_estimate");
@@ -243,42 +241,7 @@ for (int i = 0; i < 10; ++i) {
 	// 	{
 	// 		std::cout << "Command queue finished" << std::endl;
 	// 	}
-
-    //  // Set the kernel arguments
-	// 	err = dehaze.setArg(0, imageBuffer);
-    //   if (err != CL_SUCCESS) {
-    //   std::cerr << "Error setting kernel argument 0: " << err << std::endl;}
-	// 	err = dehaze.setArg(1, darkChannelBuffer);
-    //   if (err != CL_SUCCESS) {
-    //   std::cerr << "Error setting kernel argument 1: " << err << std::endl;}
-	// 	err = dehaze.setArg(2, atmosphereBuffer);
-    //   if (err != CL_SUCCESS) {
-    //   std::cerr << "Error setting kernel argument 2: " << err << std::endl;}
-	// 	err = dehaze.setArg(3, transEstBuffer);
-    //   if (err != CL_SUCCESS) {
-    //   std::cerr << "Error setting kernel argument 3: " << err << std::endl;}
-	// 	err = dehaze.setArg(4, radianceBuffer);
-    //   if (err != CL_SUCCESS) {
-    //   std::cerr << "Error setting kernel argument 4: " << err << std::endl;}
-	// 	err = dehaze.setArg(5, width);
-    //   if (err != CL_SUCCESS) {
-    //   std::cerr << "Error setting kernel argument 5: " << err << std::endl;}
-	// 	err = dehaze.setArg(6, height);
-    //   if (err != CL_SUCCESS) {
-    //   std::cerr << "Error setting kernel argument 6: " << err << std::endl;}
-	// 	err = dehaze.setArg(7, 0.80f);  // Set the omega parameter
-    //   if (err != CL_SUCCESS) {
-    //   std::cerr << "Error setting kernel argument 7: " << err << std::endl;}
-	// 	err = dehaze.setArg(8, 15);  // Set the window size parameter
-    //   if (err != CL_SUCCESS) {
-    //   std::cerr << "Error setting kernel argument 8: " << err << std::endl;}
-
-	// 	// Enqueue the kernel for execution
-	// 	queue.enqueueNDRangeKernel(dehaze, cl::NullRange, cl::NDRange(width, height), cl::NullRange);
-
-	// 	queue.finish();
 		
-		// std::vector<float> result(width * height * channels);
 		std::vector<int16_t> result(width * height);
 		queue.enqueueReadBuffer(darkChannelBuffer, CL_TRUE, 0, sizeof(int16_t) * result.size(), result.data());
 
@@ -303,10 +266,6 @@ for (int i = 0; i < 10; ++i) {
 				  << err.err()
 				  << std::endl;
 	}
-	
-	// auto stop = std::chrono::high_resolution_clock::now();
-	// auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
-	// std::cout << "Time taken by function: " << duration.count() << " milliseconds" << std::endl;
 
 	std::cout << "Press ENTER to exit...";
 	std::cin.get();

@@ -322,8 +322,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\outputImage.cpp" />
-    <ClCompile Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\stb_image.cpp" />
-    <ClCompile Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\stb_image_write.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\build\ZERO_CHECK.vcxproj">

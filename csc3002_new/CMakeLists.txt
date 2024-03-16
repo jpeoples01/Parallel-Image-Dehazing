@@ -14,7 +14,7 @@ include_directories("C:/Users/jpeop/openCL-Headers")
 include_directories("C:/Users/jpeop/OpenCL-SDK")
 
 # Source code of application		
-set (opencl_src outputImage.cpp stb_image.cpp stb_image_write.cpp)
+set (opencl_src outputImage.cpp)
  
 # Compiler flags
 if (CMAKE_COMPILER_IS_GNUCC)

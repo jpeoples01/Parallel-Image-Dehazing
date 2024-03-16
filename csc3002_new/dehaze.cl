@@ -17,10 +17,20 @@ __kernel void get_dark_channel(const int startThreadNum,
 
   int16 minValue = 32767;
 
+  int roi_start_x = x_width / 4; 
+  int roi_start_y = x_height / 4; 
+  int roi_width = x_width / 2; 
+  int roi_height = x_height / 2; 
+
   for (int y = cmin; y <= cmax; y++) {
     for (int x = rmin; x <= rmax; x++) {
       int off_tmp = y * x_width + x;
-      minValue = min(minValue, min(min(r[off_tmp], g[off_tmp]), b[off_tmp]));
+     
+      if (x >= roi_start_x && x < roi_start_x + roi_width && y >= roi_start_y && y < roi_start_y + roi_height) {
+        minValue = min(minValue, min(min(r[off_tmp], g[off_tmp]), b[off_tmp]));
+      } else {
+        minValue = r[off];
+      }
     }
   }
 
@@ -28,6 +38,7 @@ __kernel void get_dark_channel(const int startThreadNum,
     darkChannel[get_group_id(0)] = minValue;
   }
 }
+
 
 // __kernel void get_atmosphere(__global float *input, __global float *output,
 //                              __local float *local_sums, int n) {
@@ -103,27 +114,6 @@ __kernel void get_dark_channel(const int startThreadNum,
 
 //     vstore3(rad, idx * n + idy, radiance);
 //   }
-// }
-
-// __kernel void dehaze(__global float *image, 
-//                      __global float *dark_channel, __global float *atmosphere, __global float *trans_est,
-//                      __global float *radiance, int m, int n, float omega,
-//                      int win_size) {
-//   __local float local_min[1024];  
-
-//   // Get the dark channel
-//   get_dark_channel(0, image, image + m * n, image + 2 * m * n, m, n, win_size,
-//                    dark_channel);
-
-//   // Estimate the atmospheric light
-//   get_atmosphere(image, atmosphere, local_min, m * n);
-
-//   // Estimate the transmission
-//   get_transmission_estimate(image, atmosphere, omega, win_size, dark_channel,
-//                             trans_est, m, n);
-
-//   // Get the radiance
-//   get_radiance(image, trans_est, atmosphere, radiance, m, n);
 // }
 
 
