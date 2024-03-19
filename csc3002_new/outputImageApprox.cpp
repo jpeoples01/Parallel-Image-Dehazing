@@ -1,10 +1,10 @@
-#include "outputImage.hpp"
+#include "outputImageApprox.hpp"
 
 using namespace cv;
 
 int main()
 {
-Mat image = imread("C:/Users/jpeop/csc3002_new/forest.jpg", 0);
+Mat image = imread("C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/forest.jpg", 0);
 int width = image.size().width;
 int height = image.size().height;
 int channels = image.channels();
@@ -89,7 +89,7 @@ for (int i = 0; i < 10; ++i) {
 		cl::Program::Sources sources;
 
 		// Load the OpenCL source code
-		std::ifstream file("../dehaze.cl");
+		std::ifstream file("../dehazeApprox.cl");
 		std::string source(std::istreambuf_iterator<char>(file), (std::istreambuf_iterator<char>()));
 		sources.push_back({source.c_str(), source.length() + 1});
 
@@ -257,7 +257,7 @@ for (int i = 0; i < 10; ++i) {
 	    std::cout << "Time taken by function: " << duration.count() << " milliseconds" << std::endl;
 		
 		Mat  imgcv_out(height, width, CV_16SC1, img);
-		imwrite("result.png", imgcv_out);
+		imwrite("C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/approximateresult.png", imgcv_out);
 	}
 	catch (cl::Error err)
 	{

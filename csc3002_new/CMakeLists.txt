@@ -13,9 +13,6 @@ include_directories("C:/Users/jpeop/OpenCL-CLHPP/include")
 include_directories("C:/Users/jpeop/openCL-Headers")
 include_directories("C:/Users/jpeop/OpenCL-SDK")
 
-# Source code of application		
-set (opencl_src outputImage.cpp)
- 
 # Compiler flags
 if (CMAKE_COMPILER_IS_GNUCC)
     set (CMAKE_CXX_FLAGS "-D_REETRANT -Wall -Wextra -pedantic -Wno-long-long")
@@ -26,10 +23,12 @@ if (CMAKE_COMPILER_IS_GNUCC)
 	endif ()
 endif (CMAKE_COMPILER_IS_GNUCC)
  
-# Set up executable
-add_executable (imagedehaze ${opencl_src})
-target_link_libraries(imagedehaze "C:/Users/jpeop/OpenCL-SDK/install/lib/OpenCL.lib")
-target_link_libraries(imagedehaze ${OpenCV_LIBS})
+# Set up executable for outputImageApprox.cpp
+add_executable (imagedehazeApprox outputImageApprox.cpp)
+target_link_libraries(imagedehazeApprox "C:/Users/jpeop/OpenCL-SDK/install/lib/OpenCL.lib")
+target_link_libraries(imagedehazeApprox ${OpenCV_LIBS})
 
-
-
+# Set up executable for outputImageSeq.cpp
+add_executable (imagedehazeSeq outputImageSeq.cpp)
+target_link_libraries(imagedehazeSeq "C:/Users/jpeop/OpenCL-SDK/install/lib/OpenCL.lib")
+target_link_libraries(imagedehazeSeq ${OpenCV_LIBS})

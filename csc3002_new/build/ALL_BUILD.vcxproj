@@ -173,9 +173,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\build\imagedehaze.vcxproj">
-      <Project>{D2812CC3-816C-32D5-8CE6-223BE5AFE1F3}</Project>
-      <Name>imagedehaze</Name>
+    <ProjectReference Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\build\imagedehazeApprox.vcxproj">
+      <Project>{F66E695E-F783-3A8C-A197-6841348A43D3}</Project>
+      <Name>imagedehazeApprox</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\build\imagedehazeSeq.vcxproj">
+      <Project>{B5458383-66D6-3B64-AB93-7A379F17EF4B}</Project>
+      <Name>imagedehazeSeq</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
