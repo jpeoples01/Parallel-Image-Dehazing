@@ -15,7 +15,12 @@
       "ProjectGuid": "d2812cc3-816c-32d5-8ce6-223be5afe1f3",
       "DisplayName": "imagedehaze",
       "ColorIndex": 1
+    },
+    "b5458383-66d6-3b64-ab93-7a379f17ef4b": {
+      "ProjectGuid": "b5458383-66d6-3b64-ab93-7a379f17ef4b",
+      "DisplayName": "imagedehazeSeq",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

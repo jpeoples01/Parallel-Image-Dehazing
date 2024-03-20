@@ -11,6 +11,4 @@
  #include <CL/opencl.hpp>
  #endif
 
-void dehaze(cl::Context& context, cl::CommandQueue& queue, cl::Buffer& imageBuffer, float omega, int win_size, cl::Buffer& darkChannelBuffer, cl::Buffer& atmosphereBuffer, cl::Buffer& transEstBuffer, cl::Buffer& radianceBuffer, int m, int n);
-
 #endif

@@ -978,3 +978,983 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      The system is: Windows - 10.0.22631 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+      Copyright (C) Microsoft Corporation. All rights reserved.
+      
+      Build started 20/03/2024 18:47:42.
+      Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      VcpkgTripletSelection:
+        Using triplet "x64-windows" from "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\"
+        Using normalized configuration "Release"
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.exe
+      AppLocalFromInstalled:
+        pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\jpeop\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.exe" "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdC.tlog\\CompilerIdC.write.1u.tlog" "Debug\\vcpkg.applocal.log"
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:03.34
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/3.28.1/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+      Copyright (C) Microsoft Corporation. All rights reserved.
+      
+      Build started 20/03/2024 18:47:46.
+      Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      VcpkgTripletSelection:
+        Using triplet "x64-windows" from "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\"
+        Using normalized configuration "Release"
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.exe
+      AppLocalFromInstalled:
+        pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\jpeop\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.exe" "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.write.1u.tlog" "Debug\\vcpkg.applocal.log"
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:03.55
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/3.28.1/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-1x1269"
+      binary: "C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-1x1269"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-1x1269'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_67306.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 20/03/2024 18:47:51.
+        Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1x1269\\cmTC_67306.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_67306.dir\\Debug\\".
+          Creating directory "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1x1269\\Debug\\".
+          Creating directory "cmTC_67306.dir\\Debug\\cmTC_67306.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_67306.dir\\Debug\\cmTC_67306.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        VcpkgTripletSelection:
+          Using triplet "x64-windows" from "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\"
+          Using normalized configuration "Release"
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_67306.dir\\Debug\\\\" /Fd"cmTC_67306.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30706 for x64
+          CMakeCCompilerABI.c
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_67306.dir\\Debug\\\\" /Fd"cmTC_67306.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1x1269\\Debug\\cmTC_67306.exe" /INCREMENTAL /ILK:"cmTC_67306.dir\\Debug\\cmTC_67306.ilk" /NOLOGO /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-1x1269/Debug/cmTC_67306.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-1x1269/Debug/cmTC_67306.lib" /MACHINE:X64  /machine:x64 cmTC_67306.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_67306.vcxproj -> C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1x1269\\Debug\\cmTC_67306.exe
+        AppLocalFromInstalled:
+          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\jpeop\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1x1269\\Debug\\cmTC_67306.exe" "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\bin" "cmTC_67306.dir\\Debug\\cmTC_67306.tlog\\cmTC_67306.write.1u.tlog" "cmTC_67306.dir\\Debug\\vcpkg.applocal.log"
+        FinalizeBuildStatus:
+          Deleting file "cmTC_67306.dir\\Debug\\cmTC_67306.tlog\\unsuccessfulbuild".
+          Touching "cmTC_67306.dir\\Debug\\cmTC_67306.tlog\\cmTC_67306.lastbuildstate".
+        Done Building Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1x1269\\cmTC_67306.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:04.31
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-45x13k"
+      binary: "C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-45x13k"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-45x13k'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_52c70.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 20/03/2024 18:47:57.
+        Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45x13k\\cmTC_52c70.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_52c70.dir\\Debug\\".
+          Creating directory "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45x13k\\Debug\\".
+          Creating directory "cmTC_52c70.dir\\Debug\\cmTC_52c70.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_52c70.dir\\Debug\\cmTC_52c70.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        VcpkgTripletSelection:
+          Using triplet "x64-windows" from "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\"
+          Using normalized configuration "Release"
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_52c70.dir\\Debug\\\\" /Fd"cmTC_52c70.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30706 for x64
+          CMakeCXXCompilerABI.cpp
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_52c70.dir\\Debug\\\\" /Fd"cmTC_52c70.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45x13k\\Debug\\cmTC_52c70.exe" /INCREMENTAL /ILK:"cmTC_52c70.dir\\Debug\\cmTC_52c70.ilk" /NOLOGO /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-45x13k/Debug/cmTC_52c70.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-45x13k/Debug/cmTC_52c70.lib" /MACHINE:X64  /machine:x64 cmTC_52c70.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_52c70.vcxproj -> C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45x13k\\Debug\\cmTC_52c70.exe
+        AppLocalFromInstalled:
+          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\jpeop\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45x13k\\Debug\\cmTC_52c70.exe" "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\bin" "cmTC_52c70.dir\\Debug\\cmTC_52c70.tlog\\cmTC_52c70.write.1u.tlog" "cmTC_52c70.dir\\Debug\\vcpkg.applocal.log"
+        FinalizeBuildStatus:
+          Deleting file "cmTC_52c70.dir\\Debug\\cmTC_52c70.tlog\\unsuccessfulbuild".
+          Touching "cmTC_52c70.dir\\Debug\\cmTC_52c70.tlog\\cmTC_52c70.lastbuildstate".
+        Done Building Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-45x13k\\cmTC_52c70.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:03.86
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      The system is: Windows - 10.0.22631 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+      Copyright (C) Microsoft Corporation. All rights reserved.
+      
+      Build started 20/03/2024 20:51:03.
+      Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      VcpkgTripletSelection:
+        Using triplet "x64-windows" from "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\"
+        Using normalized configuration "Release"
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.exe
+      AppLocalFromInstalled:
+        pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\jpeop\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.exe" "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdC.tlog\\CompilerIdC.write.1u.tlog" "Debug\\vcpkg.applocal.log"
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:03.39
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/3.28.1/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+      Copyright (C) Microsoft Corporation. All rights reserved.
+      
+      Build started 20/03/2024 20:51:07.
+      Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      VcpkgTripletSelection:
+        Using triplet "x64-windows" from "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\"
+        Using normalized configuration "Release"
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.exe
+      AppLocalFromInstalled:
+        pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\jpeop\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.exe" "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.write.1u.tlog" "Debug\\vcpkg.applocal.log"
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:02.62
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/3.28.1/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-8esu2d"
+      binary: "C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-8esu2d"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-8esu2d'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_63125.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 20/03/2024 20:51:11.
+        Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8esu2d\\cmTC_63125.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_63125.dir\\Debug\\".
+          Creating directory "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8esu2d\\Debug\\".
+          Creating directory "cmTC_63125.dir\\Debug\\cmTC_63125.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_63125.dir\\Debug\\cmTC_63125.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        VcpkgTripletSelection:
+          Using triplet "x64-windows" from "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\"
+          Using normalized configuration "Release"
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_63125.dir\\Debug\\\\" /Fd"cmTC_63125.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30706 for x64
+          CMakeCCompilerABI.c
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_63125.dir\\Debug\\\\" /Fd"cmTC_63125.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8esu2d\\Debug\\cmTC_63125.exe" /INCREMENTAL /ILK:"cmTC_63125.dir\\Debug\\cmTC_63125.ilk" /NOLOGO /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-8esu2d/Debug/cmTC_63125.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-8esu2d/Debug/cmTC_63125.lib" /MACHINE:X64  /machine:x64 cmTC_63125.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_63125.vcxproj -> C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8esu2d\\Debug\\cmTC_63125.exe
+        AppLocalFromInstalled:
+          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\jpeop\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8esu2d\\Debug\\cmTC_63125.exe" "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\bin" "cmTC_63125.dir\\Debug\\cmTC_63125.tlog\\cmTC_63125.write.1u.tlog" "cmTC_63125.dir\\Debug\\vcpkg.applocal.log"
+        FinalizeBuildStatus:
+          Deleting file "cmTC_63125.dir\\Debug\\cmTC_63125.tlog\\unsuccessfulbuild".
+          Touching "cmTC_63125.dir\\Debug\\cmTC_63125.tlog\\cmTC_63125.lastbuildstate".
+        Done Building Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8esu2d\\cmTC_63125.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:02.93
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-82039f"
+      binary: "C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-82039f"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-82039f'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_50b17.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 20/03/2024 20:51:16.
+        Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-82039f\\cmTC_50b17.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_50b17.dir\\Debug\\".
+          Creating directory "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-82039f\\Debug\\".
+          Creating directory "cmTC_50b17.dir\\Debug\\cmTC_50b17.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_50b17.dir\\Debug\\cmTC_50b17.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        VcpkgTripletSelection:
+          Using triplet "x64-windows" from "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\"
+          Using normalized configuration "Release"
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_50b17.dir\\Debug\\\\" /Fd"cmTC_50b17.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30706 for x64
+          CMakeCXXCompilerABI.cpp
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_50b17.dir\\Debug\\\\" /Fd"cmTC_50b17.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-82039f\\Debug\\cmTC_50b17.exe" /INCREMENTAL /ILK:"cmTC_50b17.dir\\Debug\\cmTC_50b17.ilk" /NOLOGO /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-82039f/Debug/cmTC_50b17.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-82039f/Debug/cmTC_50b17.lib" /MACHINE:X64  /machine:x64 cmTC_50b17.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_50b17.vcxproj -> C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-82039f\\Debug\\cmTC_50b17.exe
+        AppLocalFromInstalled:
+          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\jpeop\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-82039f\\Debug\\cmTC_50b17.exe" "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\bin" "cmTC_50b17.dir\\Debug\\cmTC_50b17.tlog\\cmTC_50b17.write.1u.tlog" "cmTC_50b17.dir\\Debug\\vcpkg.applocal.log"
+        FinalizeBuildStatus:
+          Deleting file "cmTC_50b17.dir\\Debug\\cmTC_50b17.tlog\\unsuccessfulbuild".
+          Touching "cmTC_50b17.dir\\Debug\\cmTC_50b17.tlog\\cmTC_50b17.lastbuildstate".
+        Done Building Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-82039f\\cmTC_50b17.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:03.35
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      The system is: Windows - 10.0.22631 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+      Copyright (C) Microsoft Corporation. All rights reserved.
+      
+      Build started 20/03/2024 21:06:21.
+      Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      VcpkgTripletSelection:
+        Using triplet "x64-windows" from "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\"
+        Using normalized configuration "Release"
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.exe
+      AppLocalFromInstalled:
+        pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\jpeop\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.exe" "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdC.tlog\\CompilerIdC.write.1u.tlog" "Debug\\vcpkg.applocal.log"
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:03.29
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/3.28.1/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+      Copyright (C) Microsoft Corporation. All rights reserved.
+      
+      Build started 20/03/2024 21:06:25.
+      Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      VcpkgTripletSelection:
+        Using triplet "x64-windows" from "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\"
+        Using normalized configuration "Release"
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.exe
+      AppLocalFromInstalled:
+        pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\jpeop\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.exe" "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.write.1u.tlog" "Debug\\vcpkg.applocal.log"
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:02.11
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/3.28.1/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-j6mx5k"
+      binary: "C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-j6mx5k"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-j6mx5k'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_d05f0.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 20/03/2024 21:06:29.
+        Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j6mx5k\\cmTC_d05f0.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_d05f0.dir\\Debug\\".
+          Creating directory "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j6mx5k\\Debug\\".
+          Creating directory "cmTC_d05f0.dir\\Debug\\cmTC_d05f0.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_d05f0.dir\\Debug\\cmTC_d05f0.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        VcpkgTripletSelection:
+          Using triplet "x64-windows" from "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\"
+          Using normalized configuration "Release"
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d05f0.dir\\Debug\\\\" /Fd"cmTC_d05f0.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30706 for x64
+          CMakeCCompilerABI.c
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d05f0.dir\\Debug\\\\" /Fd"cmTC_d05f0.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j6mx5k\\Debug\\cmTC_d05f0.exe" /INCREMENTAL /ILK:"cmTC_d05f0.dir\\Debug\\cmTC_d05f0.ilk" /NOLOGO /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-j6mx5k/Debug/cmTC_d05f0.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-j6mx5k/Debug/cmTC_d05f0.lib" /MACHINE:X64  /machine:x64 cmTC_d05f0.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_d05f0.vcxproj -> C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j6mx5k\\Debug\\cmTC_d05f0.exe
+        AppLocalFromInstalled:
+          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\jpeop\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j6mx5k\\Debug\\cmTC_d05f0.exe" "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\bin" "cmTC_d05f0.dir\\Debug\\cmTC_d05f0.tlog\\cmTC_d05f0.write.1u.tlog" "cmTC_d05f0.dir\\Debug\\vcpkg.applocal.log"
+        FinalizeBuildStatus:
+          Deleting file "cmTC_d05f0.dir\\Debug\\cmTC_d05f0.tlog\\unsuccessfulbuild".
+          Touching "cmTC_d05f0.dir\\Debug\\cmTC_d05f0.tlog\\cmTC_d05f0.lastbuildstate".
+        Done Building Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j6mx5k\\cmTC_d05f0.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:02.68
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-uwaxgz"
+      binary: "C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-uwaxgz"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-uwaxgz'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_b2fc1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 20/03/2024 21:06:32.
+        Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uwaxgz\\cmTC_b2fc1.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_b2fc1.dir\\Debug\\".
+          Creating directory "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uwaxgz\\Debug\\".
+          Creating directory "cmTC_b2fc1.dir\\Debug\\cmTC_b2fc1.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_b2fc1.dir\\Debug\\cmTC_b2fc1.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        VcpkgTripletSelection:
+          Using triplet "x64-windows" from "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\"
+          Using normalized configuration "Release"
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_b2fc1.dir\\Debug\\\\" /Fd"cmTC_b2fc1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30706 for x64
+          CMakeCXXCompilerABI.cpp
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_b2fc1.dir\\Debug\\\\" /Fd"cmTC_b2fc1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uwaxgz\\Debug\\cmTC_b2fc1.exe" /INCREMENTAL /ILK:"cmTC_b2fc1.dir\\Debug\\cmTC_b2fc1.ilk" /NOLOGO /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-uwaxgz/Debug/cmTC_b2fc1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-uwaxgz/Debug/cmTC_b2fc1.lib" /MACHINE:X64  /machine:x64 cmTC_b2fc1.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_b2fc1.vcxproj -> C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uwaxgz\\Debug\\cmTC_b2fc1.exe
+        AppLocalFromInstalled:
+          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\jpeop\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uwaxgz\\Debug\\cmTC_b2fc1.exe" "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\bin" "cmTC_b2fc1.dir\\Debug\\cmTC_b2fc1.tlog\\cmTC_b2fc1.write.1u.tlog" "cmTC_b2fc1.dir\\Debug\\vcpkg.applocal.log"
+        FinalizeBuildStatus:
+          Deleting file "cmTC_b2fc1.dir\\Debug\\cmTC_b2fc1.tlog\\unsuccessfulbuild".
+          Touching "cmTC_b2fc1.dir\\Debug\\cmTC_b2fc1.tlog\\cmTC_b2fc1.lastbuildstate".
+        Done Building Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-uwaxgz\\cmTC_b2fc1.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:02.69
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      The system is: Windows - 10.0.22631 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+      Copyright (C) Microsoft Corporation. All rights reserved.
+      
+      Build started 20/03/2024 21:29:02.
+      Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      VcpkgTripletSelection:
+        Using triplet "x64-windows" from "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\"
+        Using normalized configuration "Release"
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.exe
+      AppLocalFromInstalled:
+        pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\jpeop\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.exe" "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdC.tlog\\CompilerIdC.write.1u.tlog" "Debug\\vcpkg.applocal.log"
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:04.37
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/3.28.1/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+      Copyright (C) Microsoft Corporation. All rights reserved.
+      
+      Build started 20/03/2024 21:29:07.
+      Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      VcpkgTripletSelection:
+        Using triplet "x64-windows" from "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\"
+        Using normalized configuration "Release"
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.exe
+      AppLocalFromInstalled:
+        pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\jpeop\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.exe" "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\bin" "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.write.1u.tlog" "Debug\\vcpkg.applocal.log"
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:03.46
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/3.28.1/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-h8u1l8"
+      binary: "C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-h8u1l8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-h8u1l8'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_2f678.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 20/03/2024 21:29:12.
+        Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-h8u1l8\\cmTC_2f678.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_2f678.dir\\Debug\\".
+          Creating directory "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-h8u1l8\\Debug\\".
+          Creating directory "cmTC_2f678.dir\\Debug\\cmTC_2f678.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_2f678.dir\\Debug\\cmTC_2f678.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        VcpkgTripletSelection:
+          Using triplet "x64-windows" from "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\"
+          Using normalized configuration "Release"
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2f678.dir\\Debug\\\\" /Fd"cmTC_2f678.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30706 for x64
+          CMakeCCompilerABI.c
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2f678.dir\\Debug\\\\" /Fd"cmTC_2f678.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-h8u1l8\\Debug\\cmTC_2f678.exe" /INCREMENTAL /ILK:"cmTC_2f678.dir\\Debug\\cmTC_2f678.ilk" /NOLOGO /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-h8u1l8/Debug/cmTC_2f678.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-h8u1l8/Debug/cmTC_2f678.lib" /MACHINE:X64  /machine:x64 cmTC_2f678.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_2f678.vcxproj -> C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-h8u1l8\\Debug\\cmTC_2f678.exe
+        AppLocalFromInstalled:
+          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\jpeop\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-h8u1l8\\Debug\\cmTC_2f678.exe" "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\bin" "cmTC_2f678.dir\\Debug\\cmTC_2f678.tlog\\cmTC_2f678.write.1u.tlog" "cmTC_2f678.dir\\Debug\\vcpkg.applocal.log"
+        FinalizeBuildStatus:
+          Deleting file "cmTC_2f678.dir\\Debug\\cmTC_2f678.tlog\\unsuccessfulbuild".
+          Touching "cmTC_2f678.dir\\Debug\\cmTC_2f678.tlog\\cmTC_2f678.lastbuildstate".
+        Done Building Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-h8u1l8\\cmTC_2f678.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:04.08
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-3xy2f3"
+      binary: "C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-3xy2f3"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-3xy2f3'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a913c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Microsoft (R) Build Engine version 17.0.0+c9eb9dd64 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 20/03/2024 21:29:18.
+        Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3xy2f3\\cmTC_a913c.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_a913c.dir\\Debug\\".
+          Creating directory "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3xy2f3\\Debug\\".
+          Creating directory "cmTC_a913c.dir\\Debug\\cmTC_a913c.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_a913c.dir\\Debug\\cmTC_a913c.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        VcpkgTripletSelection:
+          Using triplet "x64-windows" from "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\"
+          Using normalized configuration "Release"
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_a913c.dir\\Debug\\\\" /Fd"cmTC_a913c.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.30.30706 for x64
+          CMakeCXXCompilerABI.cpp
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /I"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_a913c.dir\\Debug\\\\" /Fd"cmTC_a913c.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.30.30705\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3xy2f3\\Debug\\cmTC_a913c.exe" /INCREMENTAL /ILK:"cmTC_a913c.dir\\Debug\\cmTC_a913c.ilk" /NOLOGO /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib" /LIBPATH:"C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-3xy2f3/Debug/cmTC_a913c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/CMakeScratch/TryCompile-3xy2f3/Debug/cmTC_a913c.lib" /MACHINE:X64  /machine:x64 cmTC_a913c.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_a913c.vcxproj -> C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3xy2f3\\Debug\\cmTC_a913c.exe
+        AppLocalFromInstalled:
+          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\Users\\jpeop\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3xy2f3\\Debug\\cmTC_a913c.exe" "C:\\Users\\jpeop\\vcpkg\\installed\\x64-windows\\bin" "cmTC_a913c.dir\\Debug\\cmTC_a913c.tlog\\cmTC_a913c.write.1u.tlog" "cmTC_a913c.dir\\Debug\\vcpkg.applocal.log"
+        FinalizeBuildStatus:
+          Deleting file "cmTC_a913c.dir\\Debug\\cmTC_a913c.tlog\\unsuccessfulbuild".
+          Touching "cmTC_a913c.dir\\Debug\\cmTC_a913c.tlog\\cmTC_a913c.lastbuildstate".
+        Done Building Project "C:\\Users\\jpeop\\dissertation\\csc3002_image_dehazing\\csc3002_new\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3xy2f3\\cmTC_a913c.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:03.75
+        
+      exitCode: 0
+...
