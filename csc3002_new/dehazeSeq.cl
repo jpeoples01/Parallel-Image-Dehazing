@@ -51,44 +51,48 @@ __kernel void get_atmosphere(__global float *input, __global float *output,
 }
 
 __kernel void get_transmission_estimate(__global const float *image, 
-                                         __global const float *atmosphere, float omega,
-                                         int win_size, __global const float *darkChannel, __global float *trans_est, int m,
-                                         int n) {
-  int idx = get_global_id(0);
-  if (idx < m * n) {
+                                     __global const float *atmosphere, 
+                                     __global float *trans_est,
+                                     float omega, int m, int n) {
+
+    int idx = get_global_id(0);
     int i = idx / n;
     int j = idx % n;
 
-    float3 pixel = vload3(idx * n + j, image);
-    float3 atm = vload3(0, atmosphere);
+    if (i < m && j < n) {
+        float3 pixel = vload3(idx * n + j, image);
+        float3 atm = vload3(0, atmosphere); 
 
-    float trans = 1.0f - omega * darkChannel[idx]; 
-
-    vstore3(trans, idx * n + j, trans_est);
-  }
+        float3 trans = 1.0f - omega * max(atm, 0.1f); 
+       
+        vstore3(trans, idx * n + j, trans_est);
+    }
 }
-
 
 
 __kernel void get_radiance(__global const float *image, 
-                               __global const float *trans_est, 
-                               __global const float *atmosphere, 
-                               __global float *radiance, int m, int n) {
-  int idx = get_global_id(0);
-  if (idx < m * n) {
-    int i = idx / n;
-    int j = idx % n; 
+                           __global const float *transmission, 
+                           __global const float *atmosphere, 
+                           __global float *radiance, int m, int n) {
 
-    float3 J = vload3(idx * n + j, image);
-    float3 A = vload3(0, atmosphere);
-    float T = trans_est[idx * n + j];
+   int idx = get_global_id(0);
+   int i = idx / n;
+   int j = idx % n;
 
-    // Radiance recovery formula
-    float3 radiance_est = (J - A) / max(T, 0.1f);
+   if (i < m && j < n) {
+       float3 pixel = vload3(idx * n + j, image);
+       float3 atm = vload3(0, atmosphere); 
+       float3 trans = vload3(idx * n + j, transmission); 
 
-    vstore3(radiance_est, idx * n + j, radiance);
-  }
+       float3 max_trans = fmax(trans, 0.1f); 
+
+       float3 rad = ((pixel - atm) / max_trans) + atm;
+
+       vstore3(rad, idx * n + j, radiance);
+   }
 }
+
+
 
 
 
