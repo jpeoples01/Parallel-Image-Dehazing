@@ -4,7 +4,7 @@ using namespace cv;
 
 int main()
 {
-	Mat image = imread("C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/forest.jpg", 0);
+	Mat image = imread("C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/forest.jpg", 1);
 	int width = image.size().width;
 	int height = image.size().height;
 	int channels = image.channels();
@@ -184,7 +184,7 @@ memcpy(transmissionImg, floatImage.data, sizeof(float) * width * height * channe
 	    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
         std::cout << "Time taken by function: " << duration.count() << " milliseconds" << std::endl;
 
-        Mat imgcv_out(height, width, CV_32FC1, result.data()); 
+        Mat imgcv_out(height, width, CV_32FC3, result.data()); 
         imwrite("C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/sequentialresult.png", imgcv_out);
 	}
 	catch (cl::Error err)
