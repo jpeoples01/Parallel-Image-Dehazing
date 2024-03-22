@@ -5,6 +5,7 @@
 #include <tuple>
 #include <string>
 #include <chrono>
+#include <algorithm>
 // #include "matplotlibcpp.h"
 #include <opencv2/opencv.hpp>
 
