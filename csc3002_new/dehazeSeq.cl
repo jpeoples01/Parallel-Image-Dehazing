@@ -42,45 +42,64 @@ __kernel void get_atmosphere(__global float *input, __global float *output,
   } else {
     local_sums[local_id] = 0;
   }
+
+  barrier(CLK_LOCAL_MEM_FENCE);
+
   if (local_id == 0) {
     output[get_group_id(0)] = local_sums[0];
   }
 }
 
-__kernel void get_transmission_estimate(__global const float *image, 
-                                         __global const float *atmosphere, 
-                                         __global float *trans_est,
-                                         float omega, int m, int n) {
+
+__kernel void get_transmission_estimate(__global const float *image, __global const float *atmosphere, __global float *trans_est, float omega, int m, int n) {
     const int idx = get_global_id(0);
     int i = idx / n;
     int j = idx % n;
-
+    
     if (idx < m * n) {
         float3 pixel = vload3(idx, image);
         float3 atm = vload3(0, atmosphere);
-
-        float min_transmission = fmin(fmin(pixel.x / atm.x, pixel.y / atm.y), pixel.z / atm.z);
-        float transmission = 1.0f - omega * min_transmission;
+        
+        // Normalize pixel and atmosphere values to the range [0, 1]
+        pixel /= 255.0f;
+        atm /= 255.0f;
+        
+        // Calculate the minimum color channel value
+        float min_channel = fmin(fmin(pixel.x, pixel.y), pixel.z);
+        
+        // Calculate the transmission estimate
+        float transmission = 1.0f - omega * min_channel;
+        
+        // Clamp the transmission value to the range [0.1, 1]
+        transmission = clamp(transmission, 0.1f, 1.0f);
+        
         float3 trans = (float3)(transmission, transmission, transmission);
-
         vstore3(trans, idx, trans_est);
     }
 }
 
 
-__kernel void get_radiance(__global const float *image, 
-                           __global const float *transmission, 
-                           __global const float *atmosphere, 
-                           __global float *radiance, int m, int n) {
+__kernel void get_radiance(__global const float *image, __global const float *transmission, __global const float *atmosphere, __global float *radiance, int m, int n) {
     int idx = get_global_id(0);
-
     if (idx < m * n) {
         float3 pixel = vload3(idx, image);
         float3 atm = vload3(0, atmosphere);
-        float3 trans = vload3(idx, transmission);
+        float trans = transmission[idx];
 
-        float3 rad = (pixel - atm) / (trans + 1e-6f) + atm;
+        // Normalize pixel and atmosphere values to the range [0, 1]
+        pixel /= 255.0f;
+        atm /= 255.0f;
 
+        // Calculate the radiance using the modified dehazing formula
+        float3 rad = (pixel - atm) / (trans + 0.0001f) + atm;
+
+        // Clamp the radiance values to the range [0, 1]
+        rad = clamp(rad, 0.0f, 1.0f);
+
+        // Scale the radiance values to the range [0, 255]
+        rad *= 255.0f;
+
+        // Store the output radiance values
         vstore3(rad, idx, radiance);
     }
 }

@@ -6,7 +6,7 @@ import numpy as np
 
 # Load the images
 image1 = cv2.imread('approximateresult.png')
-image2 = cv2.imread('forest.jpg')
+image2 = cv2.imread('hills.jpg')
 image3 = cv2.imread('sequentialresult.png')
 
 # Convert the images to grayscale

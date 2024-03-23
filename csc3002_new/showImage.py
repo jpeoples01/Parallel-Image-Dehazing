@@ -3,7 +3,7 @@ import cv2
 # Load an image
 image = cv2.imread('approximateresult.png')
 image2 = cv2.imread('sequentialresult.png')
-image3 = cv2.imread("forest.jpg")
+image3 = cv2.imread("hills.jpg")
 
 # Define the new size
 new_size = (500, 500)

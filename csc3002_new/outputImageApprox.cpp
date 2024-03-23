@@ -4,7 +4,7 @@ using namespace cv;
 
 int main()
 {
-Mat image = imread("C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/forest.jpg", 0);
+Mat image = imread("C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/hills.jpg", 0);
 int width = image.size().width;
 int height = image.size().height;
 int channels = image.channels();
