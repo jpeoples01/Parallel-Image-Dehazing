@@ -31,23 +31,20 @@ __kernel void get_dark_channel(const int startThreadNum,
     // printf("Work-item %d, darkChannel: %f\n", idx, darkChannel[off]);
 }
 
-__kernel void get_atmosphere(__global float *input, __global float *output,
-                             __local float *local_sums, int n) {
-  int global_id = get_global_id(0);
-  int local_id = get_local_id(0);
-  int local_size = get_local_size(0);
-
-  if (global_id < n) {
-    local_sums[local_id] = input[global_id];
-  } else {
-    local_sums[local_id] = 0;
-  }
-
-  barrier(CLK_LOCAL_MEM_FENCE);
-
-  if (local_id == 0) {
-    output[get_group_id(0)] = local_sums[0];
-  }
+__kernel void get_atmosphere(__global float *input, __global float *output, int n) {
+    int global_id = get_global_id(0);
+    if (global_id == 0) {
+        float3 maxVal = (float3)(0.0f, 0.0f, 0.0f);
+        int maxIdx = 0;
+        for (int i = 0; i < n; i++) {
+            float3 pixel = vload3(i, input);
+            if (length(pixel) > length(maxVal)) {
+                maxVal = pixel;
+                maxIdx = i;
+            }
+        }
+        vstore3(maxVal, 0, output);
+    }
 }
 
 
@@ -78,7 +75,6 @@ __kernel void get_transmission_estimate(__global const float *image, __global co
     }
 }
 
-
 __kernel void get_radiance(__global const float *image, __global const float *transmission, __global const float *atmosphere, __global float *radiance, int m, int n) {
     int idx = get_global_id(0);
     if (idx < m * n) {
@@ -90,8 +86,13 @@ __kernel void get_radiance(__global const float *image, __global const float *tr
         pixel /= 255.0f;
         atm /= 255.0f;
 
+        // Apply a maximum transmission threshold
+        float tmax = 1.0f; // Maximum transmission threshold
+        trans = min(trans, tmax);
+
         // Calculate the radiance using the modified dehazing formula
-        float3 rad = (pixel - atm) / (trans + 0.0001f) + atm;
+        float t0 = 0.1f; // Minimum transmission threshold
+        float3 rad = (pixel - atm) / max(trans, t0) + atm;
 
         // Clamp the radiance values to the range [0, 1]
         rad = clamp(rad, 0.0f, 1.0f);
