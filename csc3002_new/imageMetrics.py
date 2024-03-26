@@ -30,9 +30,4 @@ mse_index2 = mse(image3_gray, image2_gray)
 print(f"The results for approximateresult.png and hills.jpg are -\nSSIM: {ssim_index1}\nPSNR: {psnr_index1}\nMSE: {mse_index1}\n")
 print(f"\nThe results for sequentialresult.png and hills.jpg are -\nSSIM: {ssim_index2}\nPSNR: {psnr_index2}\nMSE: {mse_index2}\n")
 
-cv2.imshow("Original Image" , image2_gray)
-cv2.imshow("Dehazed Image" , image3_gray)
-cv2.waitKey(0)
-cv2.destroyAllWindows() 
-
 

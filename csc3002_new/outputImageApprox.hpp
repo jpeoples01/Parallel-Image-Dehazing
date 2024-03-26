@@ -7,6 +7,7 @@
 #include <chrono>
 // #include "matplotlibcpp.h"
 #include <opencv2/opencv.hpp>
+#pragma OPENCL EXTENSION cl_khr_fp16 : enable
 
 #define CL_VERSION_1_2
 #define __CL_ENABLE_EXCEPTIONS
