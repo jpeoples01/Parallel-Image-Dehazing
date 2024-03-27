@@ -3,9 +3,6 @@
   <PropertyGroup>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
-  <PropertyGroup>
-    <ResolveNugetPackages>false</ResolveNugetPackages>
-  </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
@@ -25,31 +22,31 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{CC6E1B65-174B-3C7C-9131-8F09611BBF21}</ProjectGuid>
+    <ProjectGuid>{B5458383-66D6-3B64-AB93-7A379F17EF4B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
-    <ProjectName>ALL_BUILD</ProjectName>
+    <ProjectName>imagedehazeSeq</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Utility</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Utility</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
-    <ConfigurationType>Utility</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
-    <ConfigurationType>Utility</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
@@ -62,50 +59,209 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">imagedehazeSeq.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">imagedehazeSeq</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">imagedehazeSeq.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">imagedehazeSeq</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">imagedehazeSeq.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">imagedehazeSeq</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">imagedehazeSeq.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">imagedehazeSeq</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\jpeop\OpenCL-CLHPP\include;C:\Users\jpeop\openCL-Headers;C:\Users\jpeop\OpenCL-SDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/jpeop/Downloads/opencv/build/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\jpeop\OpenCL-CLHPP\include;C:\Users\jpeop\openCL-Headers;C:\Users\jpeop\OpenCL-SDK;C:\Users\jpeop\Downloads\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\jpeop\Downloads\opencv\build\include;C:\Users\jpeop\OpenCL-CLHPP\include;C:\Users\jpeop\openCL-Headers;C:\Users\jpeop\OpenCL-SDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\jpeop\OpenCL-CLHPP\include;C:\Users\jpeop\openCL-Headers;C:\Users\jpeop\OpenCL-SDK;C:\Users\jpeop\Downloads\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\jpeop\OpenCL-SDK\install\lib\OpenCL.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490d.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490d.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490d.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490d.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490d.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490d.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490d.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490d.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490d.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490d.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490d.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490d.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490d.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490d.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490d.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/Debug/imagedehazeSeq.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/Debug/imagedehazeSeq.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\jpeop\OpenCL-CLHPP\include;C:\Users\jpeop\openCL-Headers;C:\Users\jpeop\OpenCL-SDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/jpeop/Downloads/opencv/build/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\jpeop\OpenCL-CLHPP\include;C:\Users\jpeop\openCL-Headers;C:\Users\jpeop\OpenCL-SDK;C:\Users\jpeop\Downloads\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\jpeop\Downloads\opencv\build\include;C:\Users\jpeop\OpenCL-CLHPP\include;C:\Users\jpeop\openCL-Headers;C:\Users\jpeop\OpenCL-SDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\jpeop\OpenCL-CLHPP\include;C:\Users\jpeop\openCL-Headers;C:\Users\jpeop\OpenCL-SDK;C:\Users\jpeop\Downloads\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\jpeop\OpenCL-SDK\install\lib\OpenCL.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/Release/imagedehazeSeq.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/Release/imagedehazeSeq.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\jpeop\OpenCL-CLHPP\include;C:\Users\jpeop\openCL-Headers;C:\Users\jpeop\OpenCL-SDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/jpeop/Downloads/opencv/build/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\jpeop\OpenCL-CLHPP\include;C:\Users\jpeop\openCL-Headers;C:\Users\jpeop\OpenCL-SDK;C:\Users\jpeop\Downloads\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\jpeop\Downloads\opencv\build\include;C:\Users\jpeop\OpenCL-CLHPP\include;C:\Users\jpeop\openCL-Headers;C:\Users\jpeop\OpenCL-SDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\jpeop\OpenCL-CLHPP\include;C:\Users\jpeop\openCL-Headers;C:\Users\jpeop\OpenCL-SDK;C:\Users\jpeop\Downloads\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\jpeop\OpenCL-SDK\install\lib\OpenCL.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/MinSizeRel/imagedehazeSeq.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/MinSizeRel/imagedehazeSeq.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\jpeop\OpenCL-CLHPP\include;C:\Users\jpeop\openCL-Headers;C:\Users\jpeop\OpenCL-SDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/jpeop/Downloads/opencv/build/include"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\jpeop\OpenCL-CLHPP\include;C:\Users\jpeop\openCL-Headers;C:\Users\jpeop\OpenCL-SDK;C:\Users\jpeop\Downloads\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\jpeop\Downloads\opencv\build\include;C:\Users\jpeop\OpenCL-CLHPP\include;C:\Users\jpeop\openCL-Headers;C:\Users\jpeop\OpenCL-SDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\jpeop\OpenCL-CLHPP\include;C:\Users\jpeop\openCL-Headers;C:\Users\jpeop\OpenCL-SDK;C:\Users\jpeop\Downloads\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\jpeop\OpenCL-SDK\install\lib\OpenCL.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;C:\Users\jpeop\Downloads\opencv\build\x64\vc16\lib\opencv_world490.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/RelWithDebInfo/imagedehazeSeq.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/RelWithDebInfo/imagedehazeSeq.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\CMakeLists.txt">
@@ -165,6 +321,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\outputImageSeq.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\build\ZERO_CHECK.vcxproj">
@@ -172,14 +329,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </ProjectReference>
-    <ProjectReference Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\build\imagedehazeApprox.vcxproj">
-      <Project>{F66E695E-F783-3A8C-A197-6841348A43D3}</Project>
-      <Name>imagedehazeApprox</Name>
-    </ProjectReference>
-    <ProjectReference Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\build\imagedehazeSeq.vcxproj">
-      <Project>{B5458383-66D6-3B64-AB93-7A379F17EF4B}</Project>
-      <Name>imagedehazeSeq</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
