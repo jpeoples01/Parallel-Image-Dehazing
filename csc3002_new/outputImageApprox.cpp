@@ -11,15 +11,15 @@ int main()
 	int height = image.size().height;
 	int channels = image.channels();
 
-	cv::Mat halfImage;
-	image.convertTo(halfImage, CV_16FC1, 1.0 / 255.0);
+	cv::Mat floatImage;
+	image.convertTo(floatImage, CV_32F);
 
-	std::vector<cl_half> img(width * height * channels);
-	memcpy(img.data(), halfImage.data, sizeof(cl_half) * width * height * channels);
+	std::vector<float> img(width * height * channels);
+	memcpy(img.data(), floatImage.data, sizeof(float) * width * height * channels);
 
-	std::vector<cl_half> darkChannelImg(width * height);
-	std::vector<cl_half> transmissionImg(width * height);
-	cl_half atmosphere[3];
+	std::vector<float> darkChannelImg(width * height);
+	std::vector<float> transmissionImg(width * height);
+	float atmosphere[3];
 
 	for (int i = 0; i < 10; ++i)
 	{
@@ -48,25 +48,15 @@ int main()
 		platform.getDevices(CL_DEVICE_TYPE_GPU, &devices);
 		device = devices[0];
 
-		std::string extensions = device.getInfo<CL_DEVICE_EXTENSIONS>();
-		if (extensions.find("cl_khr_fp16") != std::string::npos)
-		{
-			std::cout << "Device supports cl_khr_fp16 extension" << std::endl;
-		}
-		else
-		{
-			std::cout << "Device does not support cl_khr_fp16 extension" << std::endl;
-		}
-
 		context = cl::Context(device);
 		queue = cl::CommandQueue(context, device);
 
 		size_t maxWorkGroupSize;
 		clGetDeviceInfo(device(), CL_DEVICE_MAX_WORK_GROUP_SIZE, sizeof(size_t), &maxWorkGroupSize, NULL);
 
-		std::vector<cl_half> r(width * height);
-		std::vector<cl_half> g(width * height);
-		std::vector<cl_half> b(width * height);
+		std::vector<float> r(width * height);
+		std::vector<float> g(width * height);
+		std::vector<float> b(width * height);
 		for (int i = 0; i < height; ++i)
 		{
 			for (int j = 0; j < width; j++)
@@ -77,14 +67,14 @@ int main()
 			}
 		}
 
-		cl::Buffer rBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(cl_half) * r.size(), r.data());
-		cl::Buffer gBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(cl_half) * g.size(), g.data());
-		cl::Buffer bBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(cl_half) * b.size(), b.data());
-		cl::Buffer imageBuffer(context, CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, sizeof(cl_half) * width * height * channels, img.data());
-		cl::Buffer darkChannelBuffer(context, CL_MEM_READ_WRITE, sizeof(cl_half) * width * height);
-		cl::Buffer atmosphereBuffer(context, CL_MEM_READ_WRITE, sizeof(cl_half) * 3);
-		cl::Buffer transEstBuffer(context, CL_MEM_READ_WRITE, sizeof(cl_half) * width * height);
-		cl::Buffer radianceBuffer(context, CL_MEM_READ_WRITE, sizeof(cl_half) * width * height * 3);
+		cl::Buffer rBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(float) * r.size(), r.data());
+		cl::Buffer gBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(float) * g.size(), g.data());
+		cl::Buffer bBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(float) * b.size(), b.data());
+		cl::Buffer imageBuffer(context, CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR, sizeof(float) * width * height * channels, img.data());
+		cl::Buffer darkChannelBuffer(context, CL_MEM_READ_WRITE, sizeof(float) * width * height);
+		cl::Buffer atmosphereBuffer(context, CL_MEM_READ_WRITE, sizeof(float) * 3);
+		cl::Buffer transEstBuffer(context, CL_MEM_READ_WRITE, sizeof(float) * width * height);
+		cl::Buffer radianceBuffer(context, CL_MEM_READ_WRITE, sizeof(float) * width * height * 3);
 
 		cl::Program::Sources sources;
 		std::ifstream file("../dehazeApprox.cl");
@@ -92,20 +82,7 @@ int main()
 		sources.push_back({source.c_str(), source.length() + 1});
 
 		cl::Program program(context, sources);
-		try
-		{
-			program.build("-cl-std=CL1.2");
-		}
-		catch (cl::Error &err)
-		{
-			if (err.err() == CL_BUILD_PROGRAM_FAILURE)
-			{
-				std::string buildLog = program.getBuildInfo<CL_PROGRAM_BUILD_LOG>(device);
-				std::cerr << "Build log:" << std::endl
-						  << buildLog << std::endl;
-			}
-			throw err;
-		}
+		program.build("-cl-std=CL1.2");
 
 		cl::Kernel get_dark_channel(program, "get_dark_channel");
 		cl::Kernel get_atmosphere(program, "get_atmosphere");
@@ -114,7 +91,7 @@ int main()
 
 		auto start = std::chrono::high_resolution_clock::now();
 
-		queue.enqueueWriteBuffer(imageBuffer, CL_TRUE, 0, sizeof(cl_half) * width * height * channels, img.data());
+		queue.enqueueWriteBuffer(imageBuffer, CL_TRUE, 0, sizeof(float) * width * height * channels, img.data());
 		std::cout << "Wrote to image buffer" << std::endl;
 
 		get_dark_channel.setArg(0, 0);
@@ -128,7 +105,7 @@ int main()
 
 		queue.enqueueNDRangeKernel(get_dark_channel, cl::NullRange, cl::NDRange(globalWorkSize), cl::NullRange);
 
-		queue.enqueueReadBuffer(darkChannelBuffer, CL_TRUE, 0, sizeof(cl_half) * darkChannelImg.size(), darkChannelImg.data());
+		queue.enqueueReadBuffer(darkChannelBuffer, CL_TRUE, 0, sizeof(float) * darkChannelImg.size(), darkChannelImg.data());
 
 		std::cout << "Dark Channel Image (First 100 elements):" << std::endl;
 		for (int i = 0; i < 100; ++i)
@@ -145,7 +122,7 @@ int main()
 
 		queue.enqueueNDRangeKernel(get_atmosphere, cl::NullRange, cl::NDRange(1), cl::NullRange);
 
-		queue.enqueueReadBuffer(atmosphereBuffer, CL_TRUE, 0, sizeof(cl_half) * 3, atmosphere);
+		queue.enqueueReadBuffer(atmosphereBuffer, CL_TRUE, 0, sizeof(float) * 3, atmosphere);
 
 		std::cout << "Atmosphere: " << atmosphere[0] << ", " << atmosphere[1] << ", " << atmosphere[2] << std::endl;
 
@@ -154,13 +131,13 @@ int main()
 		get_transmission_estimate.setArg(0, imageBuffer);
 		get_transmission_estimate.setArg(1, atmosphereBuffer);
 		get_transmission_estimate.setArg(2, transEstBuffer);
-		get_transmission_estimate.setArg(3, cl_half(0.5f));
+		get_transmission_estimate.setArg(3, 0.950f);
 		get_transmission_estimate.setArg(4, height);
 		get_transmission_estimate.setArg(5, width);
 
 		queue.enqueueNDRangeKernel(get_transmission_estimate, cl::NullRange, cl::NDRange(width * height), cl::NullRange);
 
-		queue.enqueueReadBuffer(transEstBuffer, CL_TRUE, 0, sizeof(cl_half) * transmissionImg.size(), transmissionImg.data());
+		queue.enqueueReadBuffer(transEstBuffer, CL_TRUE, 0, sizeof(float) * transmissionImg.size(), transmissionImg.data());
 
 		std::cout << "Transmission Estimate (First 100 elements):" << std::endl;
 		for (int i = 0; i < 100; ++i)
@@ -180,8 +157,8 @@ int main()
 
 		queue.enqueueNDRangeKernel(get_radiance, cl::NullRange, cl::NDRange(width * height), cl::NullRange);
 
-		std::vector<cl_half> result(width * height * 3);
-		queue.enqueueReadBuffer(radianceBuffer, CL_TRUE, 0, sizeof(cl_half) * result.size(), result.data());
+		std::vector<float> result(width * height * 3);
+		queue.enqueueReadBuffer(radianceBuffer, CL_TRUE, 0, sizeof(float) * result.size(), result.data());
 
 		std::cout << "Radiance (First 100 elements):" << std::endl;
 		for (int i = 0; i < 100; ++i)
@@ -196,30 +173,24 @@ int main()
 		auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
 		std::cout << "Time taken by function: " << duration.count() << " milliseconds" << std::endl;
 
-		// Convert the radiance values from cl_half to float
-		std::vector<float> resultFloat(result.size());
-		for (int i = 0; i < result.size(); i++)
-		{
-			resultFloat[i] = result[i];
-		}
-
 		// Find the minimum and maximum values in the radiance buffer
-		float minVal = *std::min_element(resultFloat.begin(), resultFloat.end());
-		float maxVal = *std::max_element(resultFloat.begin(), resultFloat.end());
+		float minVal = *std::min_element(result.begin(), result.end());
+		float maxVal = *std::max_element(result.begin(), result.end());
+
 
 		// Normalize the radiance values to the range [0, 1]
-		for (int i = 0; i < resultFloat.size(); i++)
+		for (int i = 0; i < result.size(); i++)
 		{
-			resultFloat[i] = (resultFloat[i] - minVal) / (maxVal - minVal);
+			result[i] = (result[i] - minVal) / (maxVal - minVal);
 		}
 
 		// Scale the normalized radiance values to the range [0, 255]
-		for (int i = 0; i < resultFloat.size(); i++)
+		for (int i = 0; i < result.size(); i++)
 		{
-			resultFloat[i] *= 255.0f;
+			result[i] *= 255.0f;
 		}
 
-		Mat imgcv_out(height, width, CV_32FC3, resultFloat.data());
+		Mat imgcv_out(height, width, CV_32FC3, result.data());
 
 		// Apply gamma correction
 		float gamma = 1.0f;

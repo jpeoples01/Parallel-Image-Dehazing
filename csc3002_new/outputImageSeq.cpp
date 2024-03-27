@@ -131,7 +131,7 @@ int main()
 		get_transmission_estimate.setArg(0, imageBuffer);
 		get_transmission_estimate.setArg(1, atmosphereBuffer);
 		get_transmission_estimate.setArg(2, transEstBuffer);
-		get_transmission_estimate.setArg(3, 0.90f);
+		get_transmission_estimate.setArg(3, 0.70f);
 		get_transmission_estimate.setArg(4, height);
 		get_transmission_estimate.setArg(5, width);
 
