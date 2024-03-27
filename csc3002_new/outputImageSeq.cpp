@@ -4,7 +4,7 @@ using namespace cv;
 
 int main()
 {
-	Mat image = imread("C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/forest.jpg", cv::IMREAD_COLOR);
+	Mat image = imread("../forest.jpg", cv::IMREAD_COLOR);
 	cv::cvtColor(image, image, cv::COLOR_BGR2RGB);
 
 	int width = image.size().width;
@@ -201,7 +201,7 @@ int main()
 
 		// Convert color space from RGB to BGR
 		cv::cvtColor(imgcv_out, imgcv_out, cv::COLOR_RGB2BGR);
-		imwrite("C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/sequentialresult.png", imgcv_out);
+		imwrite("../sequentialresult.png", imgcv_out);
 	}
 	catch (cl::Error err)
 	{
