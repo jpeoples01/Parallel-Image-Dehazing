@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "f66e695e-f783-3a8c-a197-6841348a43d3": {
+      "ProjectGuid": "f66e695e-f783-3a8c-a197-6841348a43d3",
+      "DisplayName": "imagedehazeApprox",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

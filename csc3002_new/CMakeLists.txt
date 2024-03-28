@@ -32,3 +32,8 @@ target_link_libraries(imagedehazeApprox ${OpenCV_LIBS})
 add_executable (imagedehazeSeq outputImageSeq.cpp)
 target_link_libraries(imagedehazeSeq "C:/Users/jpeop/OpenCL-SDK/install/lib/OpenCL.lib")
 target_link_libraries(imagedehazeSeq ${OpenCV_LIBS})
+
+# Set up executable for outputImageSeq.cpp
+add_executable (imagedehazeHalf outputImageHalf.cpp)
+target_link_libraries(imagedehazeHalf "C:/Users/jpeop/OpenCL-SDK/install/lib/OpenCL.lib")
+target_link_libraries(imagedehazeHalf ${OpenCV_LIBS})

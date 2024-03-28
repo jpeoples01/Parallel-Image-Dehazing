@@ -1,4 +1,5 @@
 C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/imagedehazeApprox.dir
 C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/imagedehazeSeq.dir
+C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/imagedehazeHalf.dir
 C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/ALL_BUILD.dir
 C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/build/CMakeFiles/ZERO_CHECK.dir
