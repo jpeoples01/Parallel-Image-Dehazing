@@ -2,7 +2,9 @@ __kernel void get_dark_channel(const int startThreadNum,
                                __global const float *r, __global const float *g,
                                __global const float *b, const int x_height,
                                const int x_width, int wnd,
-                               __global float *darkChannel) {
+                               __global float *darkChannel,
+                               const int roi_start_x, const int roi_start_y,
+                               const int roi_end_x, const int roi_end_y) {
   const int idx = get_global_id(0) + startThreadNum;
   int i = idx / x_width;
   int j = idx % x_width;
@@ -13,12 +15,6 @@ __kernel void get_dark_channel(const int startThreadNum,
   int rmax = min(i + wnd / 2, x_height - 1);
   int cmin = max(j - wnd / 2, 0);
   int cmax = min(j + wnd / 2, x_width - 1);
-
-  // Region of interest (ROI) boundaries
-  int roi_start_x = x_width / 4;
-  int roi_start_y = x_height / 4;
-  int roi_end_x = x_width * 3 / 4;
-  int roi_end_y = x_height * 3 / 4;
 
   float minValue = 99999.0f;
   for (int y = rmin; y <= rmax; y++) {
@@ -58,17 +54,13 @@ __kernel void get_atmosphere(__global float *input, __global float *output,
 __kernel void get_transmission_estimate(__global const float *image,
                                         __global const float *atmosphere,
                                         __global float *trans_est, float omega,
-                                        int m, int n) {
+                                        int m, int n,
+                                        const int roi_start_x, const int roi_start_y,
+                                        const int roi_end_x, const int roi_end_y) {
   const int idx = get_global_id(0);
   if (idx < m * n) {
     int i = idx / n;
     int j = idx % n;
-
-    // Region of interest (ROI) boundaries
-    int roi_start_x = n / 4;
-    int roi_start_y = m / 4;
-    int roi_end_x = n * 3 / 4;
-    int roi_end_y = m * 3 / 4;
 
     float3 pixel = vload3(idx, image);
     float3 atm = vload3(0, atmosphere);
@@ -86,7 +78,7 @@ __kernel void get_transmission_estimate(__global const float *image,
         j < roi_end_x) {
       transmission = 1.0f - omega * min_channel;
     } else {
-      transmission = 1.0f - 0.95f * min_channel;
+      transmission = 1.0f - 0.80f * min_channel;
     }
 
     // Clamp the transmission value to the range [0.1, 1]

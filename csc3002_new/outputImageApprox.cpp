@@ -102,6 +102,10 @@ int main()
 		get_dark_channel.setArg(5, width);
 		get_dark_channel.setArg(6, 8);
 		get_dark_channel.setArg(7, darkChannelBuffer);
+		get_dark_channel.setArg(8, width / 4);		// roi_start_x
+		get_dark_channel.setArg(9, 0);				// roi_start_y
+		get_dark_channel.setArg(10, 3 * width / 4); // roi_end_x
+		get_dark_channel.setArg(11, height);		// roi_end_y
 
 		queue.enqueueNDRangeKernel(get_dark_channel, cl::NullRange, cl::NDRange(globalWorkSize), cl::NullRange);
 
@@ -131,9 +135,13 @@ int main()
 		get_transmission_estimate.setArg(0, imageBuffer);
 		get_transmission_estimate.setArg(1, atmosphereBuffer);
 		get_transmission_estimate.setArg(2, transEstBuffer);
-		get_transmission_estimate.setArg(3, 0.950f);
+		get_transmission_estimate.setArg(3, 0.95f);
 		get_transmission_estimate.setArg(4, height);
 		get_transmission_estimate.setArg(5, width);
+		get_transmission_estimate.setArg(6, width / 4);		// roi_start_x
+		get_transmission_estimate.setArg(7, 0);				// roi_start_y
+		get_transmission_estimate.setArg(8, 3 * width / 4); // roi_end_x
+		get_transmission_estimate.setArg(9, height);
 
 		queue.enqueueNDRangeKernel(get_transmission_estimate, cl::NullRange, cl::NDRange(width * height), cl::NullRange);
 
@@ -176,7 +184,6 @@ int main()
 		// Find the minimum and maximum values in the radiance buffer
 		float minVal = *std::min_element(result.begin(), result.end());
 		float maxVal = *std::max_element(result.begin(), result.end());
-
 
 		// Normalize the radiance values to the range [0, 1]
 		for (int i = 0; i < result.size(); i++)

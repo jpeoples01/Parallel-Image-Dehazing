@@ -1,2 +1,5 @@
 ﻿  Building Custom Rule C:/Users/jpeop/dissertation/csc3002_image_dehazing/csc3002_new/CMakeLists.txt
+  outputImageApprox.cpp
+  opencl.hpp: __CL_ENABLE_EXCEPTIONS is deprecated. Define CL_HPP_ENABLE_EXCEPTIONS instead
+  opencl.hpp: CL_HPP_TARGET_OPENCL_VERSION is not defined. It will default to 300 (OpenCL 3.0)
   imagedehazeApprox.vcxproj -> C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\build\Debug\imagedehazeApprox.exe
