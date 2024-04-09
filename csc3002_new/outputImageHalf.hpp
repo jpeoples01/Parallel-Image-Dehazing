@@ -13,7 +13,8 @@
 #define __CL_ENABLE_EXCEPTIONS
 
  #if defined(_WIN32) || defined(_WIN64)
- #include <CL/opencl.hpp>
  #else
- #include <CL/opencl.hpp>
+ #include <CL/cl2.hpp>
+ #include <opencv2/opencv.hpp>
+ #include <CL/cl_half.h>
  #endif

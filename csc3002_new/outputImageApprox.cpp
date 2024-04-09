@@ -42,11 +42,11 @@ int main()
 
 		std::vector<cl::Platform> platforms;
 		cl::Platform::get(&platforms);
-		platform = platforms[1];
+		platform = platforms[0];
 
 		std::vector<cl::Device> devices;
 		platform.getDevices(CL_DEVICE_TYPE_GPU, &devices);
-		device = devices[0];
+		device = devices[1];
 
 		context = cl::Context(device);
 		queue = cl::CommandQueue(context, device);

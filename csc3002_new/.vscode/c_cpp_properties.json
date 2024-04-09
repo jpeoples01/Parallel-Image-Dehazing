@@ -9,7 +9,9 @@
                 "C:/Users/jpeop/openCL-Headers",
                 "C:/Users/jpeop/OpenCL-SDK/include",
                 "C:/Users/jpeop/OpenCL-SDK/install/bin",
-                "C:/Users/jpeop/Downloads/opencv/build/include"
+                "C:/Users/jpeop/Downloads/opencv/build/include",
+                "/home/jetsonnano2g/pocl/include",
+                "/usr/include/opencv4"
             ],
             "defines": [
                 "_DEBUG",
