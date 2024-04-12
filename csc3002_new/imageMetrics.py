@@ -32,8 +32,8 @@ mse_index2 = mse(image3_gray, image2_gray)
 # mse_index3 = mse(image4_gray, image2_gray)
 
 # Print the SSIM, PSNR, and MSE indices
-print(f"The results for approximateresult.png and forest.jpg are -\nSSIM: {ssim_index1}\nPSNR: {psnr_index1}\nMSE: {mse_index1}\n")
-print(f"\nThe results for sequentialresult.png and forest.jpg are -\nSSIM: {ssim_index2}\nPSNR: {psnr_index2}\nMSE: {mse_index2}\n")
+print(f"The results for approximateresult.png and the inputted image are -\nSSIM: {ssim_index1}\nPSNR: {psnr_index1}\nMSE: {mse_index1}\n")
+print(f"\nThe results for sequentialresult.png and inputted image are -\nSSIM: {ssim_index2}\nPSNR: {psnr_index2}\nMSE: {mse_index2}\n")
 # print(f"\nThe results for halfprecisionresult.png and forest.jpg are -\nSSIM: {ssim_index3}\nPSNR: {psnr_index3}\nMSE: {mse_index3}\n")
 
 

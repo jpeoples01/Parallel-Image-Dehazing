@@ -8,6 +8,7 @@
 #include <algorithm>
 // #include "matplotlibcpp.h"
 #include <opencv2/opencv.hpp>
+#include <CL/cl_half.h>
 
 #define CL_VERSION_1_2
 #define __CL_ENABLE_EXCEPTIONS

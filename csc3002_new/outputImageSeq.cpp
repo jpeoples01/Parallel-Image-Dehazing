@@ -51,6 +51,24 @@ int main()
 		context = cl::Context(device);
 		queue = cl::CommandQueue(context, device);
 
+		// Print platform information
+		std::string platformName, platformVendor, platformVersion;
+		platform.getInfo(CL_PLATFORM_NAME, &platformName);
+		platform.getInfo(CL_PLATFORM_VENDOR, &platformVendor);
+		platform.getInfo(CL_PLATFORM_VERSION, &platformVersion);
+		std::cout << "Platform Name: " << platformName << std::endl;
+		std::cout << "Platform Vendor: " << platformVendor << std::endl;
+		std::cout << "Platform Version: " << platformVersion << std::endl;
+
+		// Print device information
+		std::string deviceName, deviceVendor, deviceVersion;
+		device.getInfo(CL_DEVICE_NAME, &deviceName);
+		device.getInfo(CL_DEVICE_VENDOR, &deviceVendor);
+		device.getInfo(CL_DEVICE_VERSION, &deviceVersion);
+		std::cout << "Device Name: " << deviceName << std::endl;
+		std::cout << "Device Vendor: " << deviceVendor << std::endl;
+		std::cout << "Device Version: " << deviceVersion << std::endl;
+
 		size_t maxWorkGroupSize;
 		clGetDeviceInfo(device(), CL_DEVICE_MAX_WORK_GROUP_SIZE, sizeof(size_t), &maxWorkGroupSize, NULL);
 
@@ -100,7 +118,7 @@ int main()
 		get_dark_channel.setArg(3, bBuffer);
 		get_dark_channel.setArg(4, height);
 		get_dark_channel.setArg(5, width);
-		get_dark_channel.setArg(6, 30);
+		get_dark_channel.setArg(6, 15);
 		get_dark_channel.setArg(7, darkChannelBuffer);
 
 		queue.enqueueNDRangeKernel(get_dark_channel, cl::NullRange, cl::NDRange(globalWorkSize), cl::NullRange);
@@ -176,7 +194,6 @@ int main()
 		// Find the minimum and maximum values in the radiance buffer
 		float minVal = *std::min_element(result.begin(), result.end());
 		float maxVal = *std::max_element(result.begin(), result.end());
-
 
 		// Normalize the radiance values to the range [0, 1]
 		for (int i = 0; i < result.size(); i++)

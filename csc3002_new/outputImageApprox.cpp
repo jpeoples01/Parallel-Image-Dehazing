@@ -32,6 +32,7 @@ int main()
 	}
 
 	size_t globalWorkSize = (width * height);
+	int roi_size = std::min(width, height) / 2;
 
 	try
 	{
@@ -50,6 +51,24 @@ int main()
 
 		context = cl::Context(device);
 		queue = cl::CommandQueue(context, device);
+
+		// Print platform information
+		std::string platformName, platformVendor, platformVersion;
+		platform.getInfo(CL_PLATFORM_NAME, &platformName);
+		platform.getInfo(CL_PLATFORM_VENDOR, &platformVendor);
+		platform.getInfo(CL_PLATFORM_VERSION, &platformVersion);
+		std::cout << "Platform Name: " << platformName << std::endl;
+		std::cout << "Platform Vendor: " << platformVendor << std::endl;
+		std::cout << "Platform Version: " << platformVersion << std::endl;
+
+		// Print device information
+		std::string deviceName, deviceVendor, deviceVersion;
+		device.getInfo(CL_DEVICE_NAME, &deviceName);
+		device.getInfo(CL_DEVICE_VENDOR, &deviceVendor);
+		device.getInfo(CL_DEVICE_VERSION, &deviceVersion);
+		std::cout << "Device Name: " << deviceName << std::endl;
+		std::cout << "Device Vendor: " << deviceVendor << std::endl;
+		std::cout << "Device Version: " << deviceVersion << std::endl;
 
 		size_t maxWorkGroupSize;
 		clGetDeviceInfo(device(), CL_DEVICE_MAX_WORK_GROUP_SIZE, sizeof(size_t), &maxWorkGroupSize, NULL);
@@ -135,7 +154,7 @@ int main()
 		get_transmission_estimate.setArg(0, imageBuffer);
 		get_transmission_estimate.setArg(1, atmosphereBuffer);
 		get_transmission_estimate.setArg(2, transEstBuffer);
-		get_transmission_estimate.setArg(3, 0.95f);
+		get_transmission_estimate.setArg(3, 0.80f);
 		get_transmission_estimate.setArg(4, height);
 		get_transmission_estimate.setArg(5, width);
 		get_transmission_estimate.setArg(6, width / 4);		// roi_start_x
