@@ -42,7 +42,7 @@ int main()
 
 		std::vector<cl::Platform> platforms;
 		cl::Platform::get(&platforms);
-		platform = platforms[0];
+		platform = platforms[1];
 
 		std::vector<cl::Device> devices;
 		platform.getDevices(CL_DEVICE_TYPE_CPU, &devices);

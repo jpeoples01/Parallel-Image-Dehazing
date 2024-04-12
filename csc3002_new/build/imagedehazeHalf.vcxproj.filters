@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\outputImageHalf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\jpeop\dissertation\csc3002_image_dehazing\csc3002_new\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{B733C957-B5B9-3AF7-A4A9-3808FCE26282}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
