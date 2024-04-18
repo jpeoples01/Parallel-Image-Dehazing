@@ -78,7 +78,7 @@ __kernel void get_transmission_estimate(__global const float *image,
         j < roi_end_x) {
       transmission = 1.0f - omega * min_channel;
     } else {
-      transmission = 1.0f - 0.80f * min_channel;
+      transmission = 1.0f - 0.95f * min_channel;
     }
 
     // Clamp the transmission value to the range [0.1, 1]

@@ -149,7 +149,7 @@ int main()
 		get_transmission_estimate.setArg(0, imageBuffer);
 		get_transmission_estimate.setArg(1, atmosphereBuffer);
 		get_transmission_estimate.setArg(2, transEstBuffer);
-		get_transmission_estimate.setArg(3, 0.75f);
+		get_transmission_estimate.setArg(3, 0.80f);
 		get_transmission_estimate.setArg(4, height);
 		get_transmission_estimate.setArg(5, width);
 
@@ -210,7 +210,7 @@ int main()
 		Mat imgcv_out(height, width, CV_32FC3, result.data());
 
 		// Apply gamma correction
-		float gamma = 1.1f;
+		float gamma = 1.0f;
 		cv::pow(imgcv_out, gamma, imgcv_out);
 
 		// Convert the image from floating-point to unsigned 8-bit

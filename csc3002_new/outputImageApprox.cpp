@@ -121,10 +121,14 @@ int main()
 		get_dark_channel.setArg(5, width);
 		get_dark_channel.setArg(6, 8);
 		get_dark_channel.setArg(7, darkChannelBuffer);
-		get_dark_channel.setArg(8, width / 4);		// roi_start_x
-		get_dark_channel.setArg(9, 0);				// roi_start_y
-		get_dark_channel.setArg(10, 3 * width / 4); // roi_end_x
-		get_dark_channel.setArg(11, height);		// roi_end_y
+		// get_dark_channel.setArg(8, width / 4);	
+		// get_dark_channel.setArg(9, 0);				
+		// get_dark_channel.setArg(10, 3 * width / 4); 
+		// get_dark_channel.setArg(11, height);		
+		get_dark_channel.setArg(8, (width - roi_size) / 2);
+		get_dark_channel.setArg(9, (height - roi_size) / 2);
+		get_dark_channel.setArg(10, (width - roi_size) / 2 + roi_size);
+		get_dark_channel.setArg(11, (height - roi_size) / 2 + roi_size);
 
 		queue.enqueueNDRangeKernel(get_dark_channel, cl::NullRange, cl::NDRange(globalWorkSize), cl::NullRange);
 
@@ -154,13 +158,17 @@ int main()
 		get_transmission_estimate.setArg(0, imageBuffer);
 		get_transmission_estimate.setArg(1, atmosphereBuffer);
 		get_transmission_estimate.setArg(2, transEstBuffer);
-		get_transmission_estimate.setArg(3, 0.80f);
+		get_transmission_estimate.setArg(3, 0.95f);
 		get_transmission_estimate.setArg(4, height);
 		get_transmission_estimate.setArg(5, width);
-		get_transmission_estimate.setArg(6, width / 4);		// roi_start_x
-		get_transmission_estimate.setArg(7, 0);				// roi_start_y
-		get_transmission_estimate.setArg(8, 3 * width / 4); // roi_end_x
-		get_transmission_estimate.setArg(9, height);
+		// get_transmission_estimate.setArg(6, width / 4);		
+		// get_transmission_estimate.setArg(7, 0);				
+		// get_transmission_estimate.setArg(8, 3 * width / 4); 
+		// get_transmission_estimate.setArg(9, height);
+		get_transmission_estimate.setArg(6, (width - roi_size) / 2);
+		get_transmission_estimate.setArg(7, (height - roi_size) / 2);
+		get_transmission_estimate.setArg(8, (width - roi_size) / 2 + roi_size);
+		get_transmission_estimate.setArg(9, (height - roi_size) / 2 + roi_size);
 
 		queue.enqueueNDRangeKernel(get_transmission_estimate, cl::NullRange, cl::NDRange(width * height), cl::NullRange);
 
